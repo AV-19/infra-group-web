@@ -1,6 +1,9 @@
 
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
+import CounterSection from "@/components/CounterSection";
+import NewsSection from "@/components/NewsSection";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -44,6 +47,9 @@ const Home = () => {
         </div>
       </Hero>
 
+      {/* Project Carousel */}
+      <ProjectCarousel />
+
       {/* About Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,6 +60,11 @@ const Home = () => {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A comprehensive infrastructure group comprising four specialized firms, each dedicated to different aspects of bridge construction, design, fabrication, and strategic investment in India's infrastructure future.
             </p>
+            <div className="mt-8">
+              <Button asChild variant="outline" size="lg">
+                <Link to="/about">Learn More About Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -85,29 +96,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">4</div>
-              <div className="text-lg">Specialized Firms</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">15+</div>
-              <div className="text-lg">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">100+</div>
-              <div className="text-lg">Projects Completed</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="text-lg">Happy Clients</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Stats/Counter Section */}
+      <CounterSection />
+
+      {/* News & Events Section */}
+      <NewsSection />
 
       {/* CTA Section */}
       <section className="py-16 bg-gray-900 text-white">
