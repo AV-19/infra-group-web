@@ -79,7 +79,6 @@ const Home = () => {
                 link={service.link}
                 image="placeholder"
                 className="animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` } as any}
               />
             ))}
           </div>
