@@ -10,25 +10,25 @@ const Manufacturing = () => {
       title: "Steel Fabrication",
       capacity: "500 tonnes/month",
       description: "Precision steel structure fabrication with advanced welding and cutting technology",
-      icon: "⚒️"
+      icon: "https://images.unsplash.com/photo-1565072318004-1fe9b1a2ee89?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       title: "Precast Moulds",
       capacity: "50 moulds/month",
       description: "Custom precast segment moulds with high-precision finishing",
-      icon: "🏗️"
+      icon: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       title: "Launching Girders",
       capacity: "10 units/month",
       description: "Heavy-duty launching girders for various span lengths",
-      icon: "⚙️"
+      icon: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       title: "Quality Testing",
       capacity: "24/7 operations",
       description: "Comprehensive quality control and testing facilities",
-      icon: "🔬"
+      icon: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -79,6 +79,7 @@ const Manufacturing = () => {
       <Hero
         title="Manufacturing Capabilities"
         subtitle="Advanced Fabrication Facility in Bagroda Industrial Area, Bhopal"
+        backgroundImage="https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       >
         <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
           <Link to="/contact">Request Factory Visit</Link>
@@ -97,11 +98,15 @@ const Manufacturing = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {capabilities.map((capability, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow overflow-hidden">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={capability.icon} 
+                    alt={capability.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">{capability.icon}</span>
-                  </div>
                   <CardTitle className="text-lg">{capability.title}</CardTitle>
                   <p className="text-primary font-medium">{capability.capacity}</p>
                 </CardHeader>
