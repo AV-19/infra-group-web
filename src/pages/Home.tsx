@@ -6,6 +6,7 @@ import ProjectShowcase from "@/components/ProjectShowcase";
 import InvestorSpotlight from "@/components/InvestorSpotlight";
 import CTAFooterSection from "@/components/CTAFooterSection";
 import CounterSection from "@/components/CounterSection";
+import Testimonials from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -97,6 +98,9 @@ const Home = () => {
 
       {/* Stats/Counter Section */}
       <CounterSection />
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Investor Spotlight */}
       <InvestorSpotlight />
