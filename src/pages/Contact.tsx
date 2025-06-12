@@ -217,28 +217,33 @@ const Contact = () => {
               {
                 name: "RKC Infratech",
                 specialization: "Design Consultancy",
-                contact: "design@rkcinfratech.com"
+                contact: "rkcinfra@gmail.com",
+                mobile : "+91 7880123365"
               },
               {
                 name: "Imagineering Bridges",
                 specialization: "Fabrication Services",
-                contact: "fabrication@imagineering.in"
+                contact: "rkc@imagineeringbridges.com",
+                mobile : "+91 950605713"
               },
               {
                 name: "Riyare Micro Construct",
                 specialization: "Bridge Construction",
-                contact: "construction@riyare.com"
+                contact: "riyaremicroconstruct@gmail.com",
+                mobile : "+91 7880123365"
               },
               {
                 name: "R.K. Choubey Family Office",
                 specialization: "Investment & CSR",
-                contact: "invest@rkchoubey.com"
+                contact: "invest@rkchoubey.com",
+                mobile : "+91 "
               }
             ].map((company, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-gray-900 mb-2">{company.name}</h3>
                 <p className="text-sm text-gray-600 mb-3">{company.specialization}</p>
                 <p className="text-primary text-sm font-medium">{company.contact}</p>
+                <p className="text-primary text-sm font-medium">{company.mobile}</p>
               </div>
             ))}
           </div>
