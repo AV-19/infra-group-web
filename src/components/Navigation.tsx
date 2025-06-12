@@ -20,8 +20,8 @@ const Navigation = () => {
     },
     { path: "/projects", label: "Projects" },
     { path: "/gallery", label: "Gallery" },
-    { path: "/manufacturing", label: "Manufacturing" },
-    { path: "/news", label: "News" },
+    //{ path: "/manufacturing", label: "Manufacturing" },
+   // { path: "/news", label: "News" },
     { path: "/contact", label: "Contact" },
   ];
 
