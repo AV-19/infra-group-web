@@ -50,22 +50,23 @@ const Contact = () => {
   const contactInfo = [
     {
       title: "Headquarters",
-      details: "Bhopal, Madhya Pradesh, India",
+      details: "85,RRR HOUSE, CAPITOL HILL (ALPINE JEWEL), KOLAR ROAD
+BHOPAL, Madhya Pradesh 462042, India",
       icon: "📍"
     },
     {
       title: "Email",
-      details: "info@rkcinfratech.com",
+      details: "engg.rch@gmail.com",
       icon: "📧"
     },
     {
       title: "Phone",
-      details: "+91 98XXX XXXXX",
+      details: "+91 788012365",
       icon: "📞"
     },
     {
       title: "Business Hours",
-      details: "Mon - Sat: 9:00 AM - 6:00 PM",
+      details: "Mon - Sun: 9:00 AM - 6:30 PM",
       icon: "🕒"
     }
   ];
