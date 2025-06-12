@@ -99,9 +99,9 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={20} className="mt-1 flex-shrink-0" />
                 <div>
-                  <p>85,RRR HOUSE, CAPITOL HILL (ALPINE JEWEL),</p>
-                  <p>KOLAR ROAD, BHOPAL, MADHYA PRADESH</p>
-                  <p>462042 INDIA</p>
+                  <p>85,RRR House, Capitol Hill (Alpine Jewel),Kolar Road,</p>
+                  <p>Bhopal, Madhya Pradesh,</p>
+                  <p>India - 462042</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
