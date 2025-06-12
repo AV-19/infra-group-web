@@ -49,7 +49,7 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      title: "Headquarters",
+      title: "Headquarter",
       details: "85,RRR HOUSE, CAPITOL HILL (ALPINE JEWEL), KOLAR ROAD
 BHOPAL, Madhya Pradesh 462042, India",
       icon: "📍"
