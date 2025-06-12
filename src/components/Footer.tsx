@@ -99,24 +99,24 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={20} className="mt-1 flex-shrink-0" />
                 <div>
-                  <p>RKC Infratech Group</p>
-                  <p>Bhopal, Madhya Pradesh</p>
-                  <p>India - 462001</p>
+                  <p>85,RRR HOUSE, CAPITOL HILL (ALPINE JEWEL),</p>
+                  <p>KOLAR ROAD, BHOPAL, MADHYA PRADESH</p>
+                  <p>462042 INDIA</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={20} className="flex-shrink-0" />
-                <p>+91 (755) 123-4567</p>
+                <p>+91 7880123365</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={20} className="flex-shrink-0" />
-                <p>info@rkcinfratech.com</p>
+                <p>engg.rch@gmail.com</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock size={20} className="flex-shrink-0" />
                 <div>
-                  <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-                  <p>Sat: 9:00 AM - 2:00 PM</p>
+                  <p>Mon - Sun: 9:00 AM - 6:30 PM</p>
+                
                 </div>
               </div>
             </div>
