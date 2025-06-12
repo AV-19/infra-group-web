@@ -1,121 +1,108 @@
 
 import Hero from "@/components/Hero";
-import ServiceCard from "@/components/ServiceCard";
+import PainPointsSection from "@/components/PainPointsSection";
+import EnhancedServiceCard from "@/components/EnhancedServiceCard";
+import ProjectShowcase from "@/components/ProjectShowcase";
+import InvestorSpotlight from "@/components/InvestorSpotlight";
+import CTAFooterSection from "@/components/CTAFooterSection";
 import CounterSection from "@/components/CounterSection";
-import NewsSection from "@/components/NewsSection";
-import ProjectCarousel from "@/components/ProjectCarousel";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const services = [
+  const firms = [
     {
-      title: "RKC Infratech",
-      description: "Expert consultancy for enabling and temporary structure design used in bridge and infrastructure projects.",
-      link: "/rkc-infratech"
+      title: "RKC INFRATECH",
+      tagline: "Where every bolt is drawn before it's cast",
+      keyService: "Launching girder design",
+      icon: "🖥",
+      link: "/rkc-infratech",
+      accentColor: "#3B82F6"
     },
     {
-      title: "Imagineering Bridges India LLP",
-      description: "Fabrication and supply of all enabling structures including precast segment moulds and launching girders.",
-      link: "/imagineering-bridges"
+      title: "IMAGINEERING BRIDGES",
+      tagline: "Fabrication that meets design specs to the millimeter",
+      keyService: "Segment mold supply",
+      icon: "🏭",
+      link: "/imagineering-bridges",
+      accentColor: "#F97316"
     },
     {
-      title: "Riyare Micro Construct LLP",
-      description: "Specialists in bridge construction using advanced precast methods and precision engineering.",
-      link: "/riyare-micro-construct"
+      title: "RIYARE CONSTRUCT",
+      tagline: "Building bridges that outlive their blueprints",
+      keyService: "U-girder installation",
+      icon: "🌉",
+      link: "/riyare-micro-construct",
+      accentColor: "#10B981"
     },
     {
-      title: "R.K. Choubey Family Office",
-      description: "Angel investment and CSR initiatives supporting Indian startups and infrastructure technology.",
-      link: "/rkchoubey-family-office"
+      title: "CHOUBEY OFFICE",
+      tagline: "Fueling India's next-generation infrastructure",
+      keyService: "Angel funding",
+      icon: "💰",
+      link: "/rkchoubey-family-office",
+      accentColor: "#8B5CF6"
     }
   ];
 
   return (
     <div>
       <Hero
-        title="RKC Infratech Group"
-        subtitle="Engineering, Building, and Funding India's Future"
+        title="Precision Infrastructure Solutions – From Design to Execution"
+        subtitle="4 specialized firms. 1 seamless workflow."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
-            <Link to="/contact">Get Started</Link>
+            <a href="#firms">Explore Our Expertise</a>
           </Button>
           <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-            <Link to="#services">Our Services</Link>
+            <Link to="/contact">Get a Consultation</Link>
           </Button>
         </div>
       </Hero>
 
-      {/* Project Carousel */}
-      <ProjectCarousel />
+      {/* Pain Points Section */}
+      <PainPointsSection />
 
-      {/* About Section */}
-      <section className="py-16 bg-gray-50">
+      {/* The 4 Firms Section */}
+      <section id="firms" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              About RKC Infratech Group
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A comprehensive infrastructure group comprising four specialized firms, each dedicated to different aspects of bridge construction, design, fabrication, and strategic investment in India's infrastructure future.
-            </p>
-            <div className="mt-8">
-              <Button asChild variant="outline" size="lg">
-                <Link to="/about">Learn More About Us</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Four Specialized Firms
+              The 4 Specialized Firms
             </h2>
             <p className="text-xl text-gray-600">
-              Each company in our group brings unique expertise to India's infrastructure development
+              Each company brings unique expertise to India's infrastructure development
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard
+            {firms.map((firm, index) => (
+              <EnhancedServiceCard
                 key={index}
-                title={service.title}
-                description={service.description}
-                link={service.link}
-                image="placeholder"
-                className="animate-fade-in"
+                title={firm.title}
+                tagline={firm.tagline}
+                keyService={firm.keyService}
+                icon={firm.icon}
+                link={firm.link}
+                accentColor={firm.accentColor}
               />
             ))}
           </div>
         </div>
       </section>
 
+      {/* Project Showcase */}
+      <ProjectShowcase />
+
       {/* Stats/Counter Section */}
       <CounterSection />
 
-      {/* News & Events Section */}
-      <NewsSection />
+      {/* Investor Spotlight */}
+      <InvestorSpotlight />
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Build the Future Together?
-          </h2>
-          <p className="text-xl mb-8 text-gray-300">
-            Let's discuss how RKC Infratech Group can contribute to your next infrastructure project.
-          </p>
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-            <Link to="/contact">Let's Work Together</Link>
-          </Button>
-        </div>
-      </section>
+      {/* CTA Footer Section */}
+      <CTAFooterSection />
     </div>
   );
 };
