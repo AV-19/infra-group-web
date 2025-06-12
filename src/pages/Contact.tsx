@@ -50,8 +50,7 @@ const Contact = () => {
   const contactInfo = [
     {
       title: "Headquarter",
-      details: "85,RRR HOUSE, CAPITOL HILL (ALPINE JEWEL), KOLAR ROAD
-BHOPAL, Madhya Pradesh 462042, India",
+      details: "85,RRR House, Capitol Hill (Alpine Jewel), Kolar Road, Bhopal, Madhya Pradesh, India - 462042",
       icon: "📍"
     },
     {
