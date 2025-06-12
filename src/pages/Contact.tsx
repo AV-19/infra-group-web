@@ -61,7 +61,7 @@ BHOPAL, Madhya Pradesh 462042, India",
     },
     {
       title: "Phone",
-      details: "+91 788012365",
+      details: "+91 7880123365",
       icon: "📞"
     },
     {
