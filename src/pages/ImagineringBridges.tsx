@@ -1,4 +1,3 @@
-
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -37,16 +36,9 @@ const ImagineringBridges = () => {
   return (
     <div>
       <Hero
-        title=""
+        title="Imagineering Bridges India LLP"
         subtitle="We Fabricate India's Bridge Infrastructure Backbone"
       >
-        <div className="mb-8">
-          <img 
-            src="/lovable-uploads/3d058085-125c-4835-ba9c-5b3b8492b5a5.png" 
-            alt="Imagineering Bridges India LLP" 
-            className="h-24 md:h-32 mx-auto"
-          />
-        </div>
         <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
           <Link to="/contact">Get a Quote for Fabrication</Link>
         </Button>

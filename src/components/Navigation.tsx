@@ -25,13 +25,35 @@ const Navigation = () => {
     { path: "/contact", label: "Contact" },
   ];
 
+  const getLogoForCurrentPage = () => {
+    if (location.pathname === "/imagineering-bridges") {
+      return (
+        <img 
+          src="/lovable-uploads/3d058085-125c-4835-ba9c-5b3b8492b5a5.png" 
+          alt="Imagineering Bridges India LLP" 
+          className="h-8 md:h-10"
+        />
+      );
+    }
+    if (location.pathname === "/riyare-micro-construct") {
+      return (
+        <img 
+          src="/lovable-uploads/5558ae05-e6ec-41d2-9667-53db85f0ce8c.png" 
+          alt="Riyare Micro Construct LLP" 
+          className="h-8 md:h-10"
+        />
+      );
+    }
+    return <span className="text-2xl font-bold text-primary">RKC Infratech Group</span>;
+  };
+
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
-              <span className="text-2xl font-bold text-primary">RKC Infratech Group</span>
+              {getLogoForCurrentPage()}
             </Link>
           </div>
           
