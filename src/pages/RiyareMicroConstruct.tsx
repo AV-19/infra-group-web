@@ -42,9 +42,16 @@ const RiyareMicroConstruct = () => {
   return (
     <div>
       <Hero
-        title="Riyare Micro Construct LLP"
+        title=""
         subtitle="Building the Future with Precision Precast"
       >
+        <div className="mb-8">
+          <img 
+            src="/lovable-uploads/5558ae05-e6ec-41d2-9667-53db85f0ce8c.png" 
+            alt="Riyare Micro Construct LLP" 
+            className="h-24 md:h-32 mx-auto"
+          />
+        </div>
         <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
           <Link to="/contact">Partner With Us</Link>
         </Button>
