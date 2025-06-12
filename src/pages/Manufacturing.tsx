@@ -1,4 +1,3 @@
-
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -79,7 +78,7 @@ const Manufacturing = () => {
       <Hero
         title="Manufacturing Capabilities"
         subtitle="Advanced Fabrication Facility in Bagroda Industrial Area, Bhopal"
-        backgroundImage="https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImages={["https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"]}
       >
         <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
           <Link to="/contact">Request Factory Visit</Link>

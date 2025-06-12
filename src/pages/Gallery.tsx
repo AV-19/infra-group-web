@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import { Card } from "@/components/ui/card";
@@ -69,7 +68,7 @@ const Gallery = () => {
       <Hero
         title="Gallery"
         subtitle="Explore Our Equipment, Facilities, and Project Achievements"
-        backgroundImage="https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImages={["https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"]}
       />
 
       <section className="py-16">

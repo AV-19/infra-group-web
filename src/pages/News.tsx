@@ -1,4 +1,3 @@
-
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -59,7 +58,7 @@ const News = () => {
       <Hero
         title="News & Events"
         subtitle="Stay Updated with Our Latest Achievements and Industry Insights"
-        backgroundImage="https://images.unsplash.com/photo-1589149098258-3e9102cd63d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImages={["https://images.unsplash.com/photo-1589149098258-3e9102cd63d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"]}
       />
 
       <section className="py-16">
