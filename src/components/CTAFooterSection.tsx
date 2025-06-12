@@ -117,7 +117,7 @@ const CTAFooterSection = () => {
           <p className="text-gray-400 text-sm mb-4">
             Not sure which service you need? Let's have a conversation.
           </p>
-          <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900">
+          <Button variant="outline" size="lg" className="border-white text-blue bg-transparent hover:bg-white hover:text-gray-900">
             Schedule a Consultation Call
           </Button>
         </div>
