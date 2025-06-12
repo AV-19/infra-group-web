@@ -4,30 +4,30 @@ import { Card, CardContent } from "@/components/ui/card";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Rajesh Kumar",
-      position: "Project Manager",
-      company: "National Highway Authority",
-      content: "RKC Infratech's precision in launching girder design helped us complete our project 2 months ahead of schedule. Their attention to detail is unmatched.",
+      name: "Mohit Jandu",
+      position: "Managing Director",
+      company: "Jandu Construction India private Limited",
+      content: "RKC Infratech's expertise in bridge consultancy has been invaluable for our projects. Their attention to detail and innovative design approaches have not only streamlined our processes but also enhanced the overall safety and efficiency of our structures. I highly recommend their services to anyone in need of reliable consultancy for temporary structures.",
       rating: 5
     },
     {
-      name: "Priya Sharma",
-      position: "Chief Engineer",
-      company: "Metro Rail Corporation",
-      content: "Imagineering Bridges delivered segment molds that met our specifications to the exact millimeter. The quality of fabrication exceeded our expectations.",
+      name: "Neeraj Gawar",
+      position: "Director",
+      company: "Gawar Construction Limited",
+      content: "Working with RKC Infratech has been a game-changer for our construction initiatives. Their skilled team provided exceptional design solutions for our temporary structures, ensuring that we met our deadlines while maintaining the highest quality standards. They truly understand the needs of their clients and deliver outstanding results.",
       rating: 5
     },
     {
-      name: "Vikram Singh",
-      position: "Infrastructure Director",
-      company: "State Bridge Development Corp",
-      content: "Riyare Construct's U-girder installation was flawless. Their team's expertise in bridge construction is evident in every project they undertake.",
+      name: "Atul Joshi",
+      position: "Vice President",
+      company: "Dilip buildcon Limited",
+      content: "I am thoroughly impressed with RKC Infratech's dedication to excellence in bridge consultancy. They approached our project with a level of professionalism and creativity that exceeded our expectations. Their ability to foresee potential challenges and provide innovative solutions has made a significant impact on our project’s success. I cannot recommend them highly enough.",
       rating: 5
     },
     {
-      name: "Anil Patel",
-      position: "Investment Head",
-      company: "Infrastructure Fund Ltd",
+      name: "Manab Datta",
+      position: "President",
+      company: "GPT Infraprojects Limited",
       content: "R.K. Choubey Family Office's strategic funding approach has been instrumental in scaling our infrastructure projects across multiple states.",
       rating: 5
     }
