@@ -44,6 +44,15 @@ const Navigation = () => {
         />
       );
     }
+    if (location.pathname === "/rkchoubey-family-office") {
+      return (
+        <img 
+          src="/lovable-uploads/5558ae05-e6ec-41d2-9667-53db85f0ce8c.png" 
+          alt="Riyare Micro Construct LLP" 
+          className="h-8 md:h-10"
+        />
+      );
+    }
     return <span className="text-2xl font-bold text-primary">RKC Infratech Group</span>;
   };
 
