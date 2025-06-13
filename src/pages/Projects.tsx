@@ -11,12 +11,12 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Mumbai Metro Phase 3 Viaduct",
+      title: " MAJOR BRIDGE OVER KRISHNA RIVER",
       firm: "Riyare Micro Construct",
-      type: "Precast Segmental Bridge",
-      location: "Mumbai, Maharashtra",
+      type: " GROUND SUPPORT SYSTEM (UNDER SLUNG LAUNCHING GIRDER)",
+      location: "Vijaywada",
       year: "2024",
-      details: "42-span viaduct with 850m total length using precast segmental construction",
+      details: "NAVYUGA ENGINERING COMPANY LTD",
       image: "🚇"
     },
     {
