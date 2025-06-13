@@ -20,12 +20,12 @@ const Projects = () => {
       image: "🚇"
     },
     {
-      title: "Yamuna Expressway Bridge",
+      title: "MAJOR BRIDGE OVER SHARAVATHI BACKWATWER",
       firm: "RKC Infratech",
-      type: "Design Consultancy",
-      location: "Uttar Pradesh",
+      type: " LAUNCHING GIRDER FOR ERECTION OF GIRDER",
+      location: "Karnataka",
       year: "2023",
-      details: "Temporary structure design for 120m span post-tensioned girder bridge",
+      details: "AMRUTHA CONSTRUCTION PVT LTD",
       image: "🌉"
     },
     {
