@@ -59,7 +59,7 @@ const RKChoubeyFamilyOffice = () => {
           <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
             <Link to="/contact">Submit a Startup</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+          <Button asChild variant="outline" size="lg" className="border-white text-blue bg-transparent hover:bg-white hover:text-primary">
             <Link to="/contact">Partner with CSR</Link>
           </Button>
         </div>
