@@ -47,7 +47,7 @@ const Navigation = () => {
     if (location.pathname === "/rkchoubey-family-office") {
       return (
         <img 
-          src="/lovable-uploads/WhatsApp Image 2025-06-13 at 12.12.53_98f5d5fd.jpg" 
+          src="/lovable-uploads/family-office-logo.jpg" 
           alt="Riyare Micro Construct LLP" 
           className="h-8 md:h-10"
         />
