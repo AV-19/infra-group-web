@@ -16,8 +16,9 @@ const Projects = () => {
       type: " GROUND SUPPORT SYSTEM (UNDER SLUNG LAUNCHING GIRDER)",
       location: "Vijaywada",
       year: "2024",
-      details: "NAVYUGA ENGINERING COMPANY LTD",
-      image: "🚇"
+      details: "",
+      image: "🚇",
+    client : "NAVYUGA ENGINERING COMPANY LTD"
     },
     {
       title: "MAJOR BRIDGE OVER SHARAVATHI BACKWATWER",
@@ -25,44 +26,53 @@ const Projects = () => {
       type: " LAUNCHING GIRDER FOR ERECTION OF GIRDER",
       location: "Karnataka",
       year: "2023",
-      details: "AMRUTHA CONSTRUCTION PVT LTD",
-      image: "🌉"
+      details: "",
+      image: "🌉",
+    client : "AMRUTHA CONSTRUCTION PVT LTD"
     },
     {
-      title: "Segment Moulds for Delhi-NCR Project",
+      title: " SHIMLA BYPASS PROJECT",
       firm: "Imagineering Bridges",
-      type: "Fabrication",
-      location: "Bhopal, Madhya Pradesh",
+      type: "Design",
+      location: "Shimla, India",
       year: "2023",
-      details: "Precision fabricated precast segment moulds for metro rail project",
-      image: "⚙️"
+      details: " PIER CAP SHUTETRING, LAUNCHING GIRDER FOR ERECTION OF 
+GIRDER, CASTING YARD, SEGMENT MOULD, GROUND SUPPORT SYSTEM (UNDER SLUNG 
+LAUNCHING GIRDER), FORM WORK TRAVELLER",
+      image: "⚙️",
+    client : "GAWAR CONSTRUCTION LTD"
     },
     {
-      title: "Pune River Crossing",
+      title: "MTHL- PUNE MISSING LINK",
       firm: "Riyare Micro Construct",
-      type: "Extra-Dosed Bridge",
+      type: "Design",
       location: "Pune, Maharashtra",
       year: "2023",
-      details: "180m main span extra-dosed bridge using balanced cantilever method",
-      image: "🌊"
+      details: "PRE-TENSIONED GIRDER CASTING YARD, GIRDER SHUTTERING, PIER CAP CENTERING, ALL THE ENABLING STRUTCUTRE",
+      image: "🌊",
+    client : "GAWAR CONSTRUCTION LTD"
     },
     {
-      title: "Launching Girders Manufacturing",
+      title: "MUMBAI METRO",
       firm: "Imagineering Bridges",
-      type: "Fabrication",
-      location: "Bhopal, Madhya Pradesh",
+      type: "Design",
+      location: "Munmbai, Maharashtra",
       year: "2022",
-      details: "Custom launching girders for highway overpass construction",
-      image: "🏗️"
+      details: " PRE-TENSIONED U GIRDER CASTING YARD & ITS FOUNDATIONS, PRE-TENSIONED GIRDER CASTING YARD, CROSS ARM LIFTER, LIFTING BEAMS, REBAR CAGE LIFTERS, STACKING BEAMS, REBAR JIG, TRANSPORTATION FRAMES, PIER CAP CENTERING, STRESSING PLATFORM, MOVABLE SHED, ALL THE ENABLING STRUTCUTRE",
+      image: "🏗️",
+    client : "GAWAR CONSTRUCTION LTD"
     },
     {
-      title: "Highway Overpass Design",
+      title: "CABLE EXTRADOSED BRIDGE 
+OVER NARMADA RIVER",
       firm: "RKC Infratech",
-      type: "Design Consultancy",
+      type: "Design",
       location: "Rajasthan",
       year: "2022",
-      details: "Comprehensive temporary structure design for multi-span highway bridge",
-      image: "🛣️"
+      details: "CASTING YARD, SEGMENT MOULD, PIER TABLE CENTERING, STITCH CENTERING ARRANGEMENT, STRONG BACK, SEGMENT LIFTER",
+      image: "🛣️",
+    client : "JANDU CONSTRUCTION INDIA PVT 
+LTD"
     }
   ];
 
@@ -112,6 +122,7 @@ const Projects = () => {
                   <p className="text-primary font-medium mb-2">{project.type}</p>
                   <p className="text-gray-600 mb-2">{project.location}</p>
                   <p className="text-sm text-gray-500 mb-3">{project.year}</p>
+                  <p className="text-gray-600 text-sm">{project.client}</p>
                   <p className="text-gray-600 text-sm">{project.details}</p>
                 </CardContent>
               </Card>
