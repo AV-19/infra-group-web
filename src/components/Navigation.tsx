@@ -53,7 +53,13 @@ const Navigation = () => {
         />
       );
     }
-    return <span className="text-2xl font-bold text-primary">RKC Infratech Group</span>;
+    return (
+        <img 
+          src="/lovable-uploads/rkc-infratech.png" 
+          alt="RKC Infratech" 
+          className="h-8 md:h-10"
+        />
+      );
   };
 
   return (
