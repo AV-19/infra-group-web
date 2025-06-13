@@ -48,7 +48,7 @@ const Navigation = () => {
       return (
         <img 
           src="/lovable-uploads/family-office-logo.jpg" 
-          alt="Riyare Micro Construct LLP" 
+          alt="R.K. Choubey Family Office" 
           className="h-8 md:h-10"
         />
       );
