@@ -50,7 +50,7 @@ const ProjectShowcase = () => {
   ];
 
   // Just show first 4 projects
-  const displayedProjects = projects.slice(0, 4);
+  const displayedProjects = projects.slice(0, 3);
 
   return (
     <section className="py-16 bg-gray-50">
