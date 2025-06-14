@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,7 +17,7 @@ const Projects = () => {
       year: "2024",
       details: "",
       image: "🚇",
-    client : "NAVYUGA ENGINERING COMPANY LTD"
+      client: "NAVYUGA ENGINERING COMPANY LTD"
     },
     {
       title: "MAJOR BRIDGE OVER SHARAVATHI BACKWATWER",
@@ -28,7 +27,7 @@ const Projects = () => {
       year: "2023",
       details: "",
       image: "🌉",
-    client : "AMRUTHA CONSTRUCTION PVT LTD"
+      client: "AMRUTHA CONSTRUCTION PVT LTD"
     },
     {
       title: " SHIMLA BYPASS PROJECT",
@@ -36,11 +35,9 @@ const Projects = () => {
       type: "Design",
       location: "Shimla, India",
       year: "2023",
-      details: " PIER CAP SHUTETRING, LAUNCHING GIRDER FOR ERECTION OF 
-GIRDER, CASTING YARD, SEGMENT MOULD, GROUND SUPPORT SYSTEM (UNDER SLUNG 
-LAUNCHING GIRDER), FORM WORK TRAVELLER",
+      details: " PIER CAP SHUTETRING, LAUNCHING GIRDER FOR ERECTION OF GIRDER, CASTING YARD, SEGMENT MOULD, GROUND SUPPORT SYSTEM (UNDER SLUNG LAUNCHING GIRDER), FORM WORK TRAVELLER",
       image: "⚙️",
-    client : "GAWAR CONSTRUCTION LTD"
+      client: "GAWAR CONSTRUCTION LTD"
     },
     {
       title: "MTHL- PUNE MISSING LINK",
@@ -50,7 +47,7 @@ LAUNCHING GIRDER), FORM WORK TRAVELLER",
       year: "2023",
       details: "PRE-TENSIONED GIRDER CASTING YARD, GIRDER SHUTTERING, PIER CAP CENTERING, ALL THE ENABLING STRUTCUTRE",
       image: "🌊",
-    client : "GAWAR CONSTRUCTION LTD"
+      client: "GAWAR CONSTRUCTION LTD"
     },
     {
       title: "MUMBAI METRO",
@@ -60,19 +57,17 @@ LAUNCHING GIRDER), FORM WORK TRAVELLER",
       year: "2022",
       details: " PRE-TENSIONED U GIRDER CASTING YARD & ITS FOUNDATIONS, PRE-TENSIONED GIRDER CASTING YARD, CROSS ARM LIFTER, LIFTING BEAMS, REBAR CAGE LIFTERS, STACKING BEAMS, REBAR JIG, TRANSPORTATION FRAMES, PIER CAP CENTERING, STRESSING PLATFORM, MOVABLE SHED, ALL THE ENABLING STRUTCUTRE",
       image: "🏗️",
-    client : "GAWAR CONSTRUCTION LTD"
+      client: "GAWAR CONSTRUCTION LTD"
     },
     {
-      title: "CABLE EXTRADOSED BRIDGE 
-OVER NARMADA RIVER",
+      title: "CABLE EXTRADOSED BRIDGE OVER NARMADA RIVER",
       firm: "RKC Infratech",
       type: "Design",
       location: "Rajasthan",
       year: "2022",
       details: "CASTING YARD, SEGMENT MOULD, PIER TABLE CENTERING, STITCH CENTERING ARRANGEMENT, STRONG BACK, SEGMENT LIFTER",
       image: "🛣️",
-    client : "JANDU CONSTRUCTION INDIA PVT 
-LTD"
+      client: "JANDU CONSTRUCTION INDIA PVT LTD"
     }
   ];
 
