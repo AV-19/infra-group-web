@@ -1,12 +1,9 @@
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const ProjectShowcase = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
-  
-  const filters = ["All", "Design (RKC)", "Fabrication (Imagineering)", "Construction (Riyare)"];
-  
+  // Remove filter state/logic
   const projects = [
     {
       id: 1,
@@ -52,12 +49,8 @@ const ProjectShowcase = () => {
     }
   ];
 
-  const filteredProjects = activeFilter === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
-  
-  // Only show first 4 projects
-  const displayedProjects = filteredProjects.slice(0, 4);
+  // Just show first 4 projects
+  const displayedProjects = projects.slice(0, 4);
 
   return (
     <section className="py-16 bg-gray-50">
@@ -69,23 +62,6 @@ const ProjectShowcase = () => {
           <p className="text-xl text-gray-600">
             From concept to completion - see our expertise in action
           </p>
-        </div>
-
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center mb-8 space-x-2">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-full font-medium transition-all mb-2 ${
-                activeFilter === filter
-                  ? 'bg-primary text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
         </div>
 
         {/* Masonry Grid */}
