@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
 
   const filters = ["All", "RKC Infratech", "Imagineering Bridges", "Riyare Micro Construct"];
 
@@ -76,6 +76,18 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.firm === activeFilter);
 
+  const handleReadMore = (index: number) => {
+    setExpandedIndexes((prev) =>
+      prev.includes(index)
+        ? prev.filter((i) => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  const truncate = (text: string, maxLength: number) => {
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  };
+
   return (
     <div>
       <Hero
@@ -101,28 +113,50 @@ const Projects = () => {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">{project.image}</span>
-                  </div>
-                  <CardTitle className="text-lg text-center">{project.title}</CardTitle>
-                  <div className="text-center">
-                    <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                      {project.firm}
-                    </span>
-                  </div>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-primary font-medium mb-2">{project.type}</p>
-                  <p className="text-gray-600 mb-2">{project.location}</p>
-                  <p className="text-sm text-gray-500 mb-3">{project.year}</p>
-                  <p className="text-gray-600 text-sm">{project.client}</p>
-                  <p className="text-gray-600 text-sm">{project.details}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {filteredProjects.map((project, index) => {
+              // Full index for correctness with filters
+              const absoluteIndex = projects.indexOf(project);
+              const isExpanded = expandedIndexes.includes(absoluteIndex);
+              const shouldTruncate = project.details && project.details.length > 80;
+
+              return (
+                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl">{project.image}</span>
+                    </div>
+                    <CardTitle className="text-lg text-center">{project.title}</CardTitle>
+                    <div className="text-center">
+                      <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                        {project.firm}
+                      </span>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-primary font-medium mb-2">{project.type}</p>
+                    <p className="text-gray-600 mb-2">{project.location}</p>
+                    <p className="text-sm text-gray-500 mb-3">{project.year}</p>
+                    <p className="text-gray-600 text-sm">{project.client}</p>
+                    {project.details && (
+                      <p className="text-gray-600 text-sm">
+                        {isExpanded || !shouldTruncate
+                          ? project.details
+                          : truncate(project.details, 80)}
+                        {shouldTruncate && (
+                          <Button
+                            variant="link"
+                            className="text-primary p-0 h-auto text-sm ml-2"
+                            onClick={() => handleReadMore(absoluteIndex)}
+                          >
+                            {isExpanded ? "Read less" : "Read more"}
+                          </Button>
+                        )}
+                      </p>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           {filteredProjects.length === 0 && (
@@ -137,4 +171,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
