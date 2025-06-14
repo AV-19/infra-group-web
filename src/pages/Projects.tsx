@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,9 +11,9 @@ const Projects = () => {
 
   const projects = [
     {
-      title: " MAJOR BRIDGE OVER KRISHNA RIVER",
+      title: "MAJOR BRIDGE OVER KRISHNA RIVER",
       firm: "Riyare Micro Construct",
-      type: " GROUND SUPPORT SYSTEM (UNDER SLUNG LAUNCHING GIRDER)",
+      type: "GROUND SUPPORT SYSTEM (UNDER SLUNG LAUNCHING GIRDER)",
       location: "Vijaywada",
       year: "2024",
       details: "",
@@ -22,7 +23,7 @@ const Projects = () => {
     {
       title: "MAJOR BRIDGE OVER SHARAVATHI BACKWATWER",
       firm: "RKC Infratech",
-      type: " LAUNCHING GIRDER FOR ERECTION OF GIRDER",
+      type: "LAUNCHING GIRDER FOR ERECTION OF GIRDER",
       location: "Karnataka",
       year: "2023",
       details: "",
@@ -30,12 +31,12 @@ const Projects = () => {
       client: "AMRUTHA CONSTRUCTION PVT LTD"
     },
     {
-      title: " SHIMLA BYPASS PROJECT",
+      title: "SHIMLA BYPASS PROJECT",
       firm: "Imagineering Bridges",
       type: "Design",
       location: "Shimla, India",
       year: "2023",
-      details: " PIER CAP SHUTETRING, LAUNCHING GIRDER FOR ERECTION OF GIRDER, CASTING YARD, SEGMENT MOULD, GROUND SUPPORT SYSTEM (UNDER SLUNG LAUNCHING GIRDER), FORM WORK TRAVELLER",
+      details: "PIER CAP SHUTETRING, LAUNCHING GIRDER FOR ERECTION OF GIRDER, CASTING YARD, SEGMENT MOULD, GROUND SUPPORT SYSTEM (UNDER SLUNG LAUNCHING GIRDER), FORM WORK TRAVELLER",
       image: "⚙️",
       client: "GAWAR CONSTRUCTION LTD"
     },
@@ -53,9 +54,9 @@ const Projects = () => {
       title: "MUMBAI METRO",
       firm: "Imagineering Bridges",
       type: "Design",
-      location: "Munmbai, Maharashtra",
+      location: "Mumbai, Maharashtra",
       year: "2022",
-      details: " PRE-TENSIONED U GIRDER CASTING YARD & ITS FOUNDATIONS, PRE-TENSIONED GIRDER CASTING YARD, CROSS ARM LIFTER, LIFTING BEAMS, REBAR CAGE LIFTERS, STACKING BEAMS, REBAR JIG, TRANSPORTATION FRAMES, PIER CAP CENTERING, STRESSING PLATFORM, MOVABLE SHED, ALL THE ENABLING STRUTCUTRE",
+      details: "PRE-TENSIONED U GIRDER CASTING YARD & ITS FOUNDATIONS, PRE-TENSIONED GIRDER CASTING YARD, CROSS ARM LIFTER, LIFTING BEAMS, REBAR CAGE LIFTERS, STACKING BEAMS, REBAR JIG, TRANSPORTATION FRAMES, PIER CAP CENTERING, STRESSING PLATFORM, MOVABLE SHED, ALL THE ENABLING STRUTCUTRE",
       image: "🏗️",
       client: "GAWAR CONSTRUCTION LTD"
     },
@@ -136,3 +137,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
