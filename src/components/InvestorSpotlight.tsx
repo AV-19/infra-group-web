@@ -1,5 +1,5 @@
 
-import { TrendingUp, Users, Lightbulb } from "lucide-react";
+import { TrendingUp, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import InvestmentDonutChart from "./InvestmentDonutChart";
@@ -53,7 +53,6 @@ const InvestorSpotlight = () => (
             <TrendingUp className="mr-2 text-green-400" size={20} />
             Portfolio
           </h3>
-          {/* Make chart smaller */}
           <div className="w-[170px] h-[170px]">
             <InvestmentDonutChart data={investmentStats} />
           </div>
@@ -72,20 +71,8 @@ const InvestorSpotlight = () => (
             ))}
           </div>
         </div>
-        {/* Details & stats column */}
+        {/* Stats and CTA column (success story card removed) */}
         <div className="flex-1 flex flex-col gap-4 justify-between min-w-[230px]">
-          <div className="rounded-xl p-3 bg-white/10 backdrop-blur-sm border border-white/10 shadow flex flex-col gap-1 animate-fade-in">
-            <div className="flex items-center mb-1">
-              <Users className="mr-2 text-yellow-400 h-5 w-5" />
-              <h4 className="text-md font-semibold">Success Story</h4>
-            </div>
-            <blockquote className="text-[15px] italic mb-1 leading-normal">
-              “Choubey Family Office’s support helped us scale our precast startup to a <span className="text-yellow-400 font-bold">₹50 crore valuation</span> in 18 months.”
-            </blockquote>
-            <cite className="text-xs opacity-80 font-medium">
-              — Priya Sharma, CEO, ModularBridge Technologies
-            </cite>
-          </div>
           {/* Key Stats */}
           <div className="grid grid-cols-2 gap-3">
             {statsArr.map((s, i) => (
