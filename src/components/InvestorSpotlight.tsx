@@ -1,4 +1,3 @@
-
 import { TrendingUp, Users, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -72,18 +71,6 @@ const InvestorSpotlight = () => (
         </div>
         {/* Details & stats column */}
         <div className="flex-1 flex flex-col gap-8 justify-between">
-          <div className="rounded-2xl p-6 bg-white/10 backdrop-blur-sm border border-white/10 shadow-lg flex flex-col gap-2 animate-fade-in">
-            <div className="flex items-center mb-2">
-              <Users className="mr-3 text-yellow-400" size={24} />
-              <h4 className="text-lg font-semibold">Success Story</h4>
-            </div>
-            <blockquote className="text-lg italic mb-2 leading-relaxed">
-              “Choubey Family Office’s strategic investment and mentorship helped us scale our precast technology startup from concept to a <span className="text-yellow-400 font-bold">₹50 crore valuation</span> in just 18 months.”
-            </blockquote>
-            <cite className="text-sm opacity-80 font-medium">
-              — Priya Sharma, CEO, ModularBridge Technologies
-            </cite>
-          </div>
           {/* Key Stats */}
           <div className="grid grid-cols-2 gap-6 md:gap-10 mt-2">
             {statsArr.map((s, i) => (
@@ -118,4 +105,3 @@ const InvestorSpotlight = () => (
 );
 
 export default InvestorSpotlight;
-
