@@ -11,9 +11,21 @@ const About = () => {
       image: "👨‍💼"
     },
     {
-      name: "Engineering Team",
-      position: "Technical Leadership",
-      bio: "Our team of highly qualified engineers brings decades of combined experience in structural design and construction management.",
+      name: "Sai Bhavith EV",
+      position: "Sr. Manager Design",
+      bio: "M.Tech in Structural Engineering from Vellore Institute of Technology, has 5+ year experience in temporary structure design and has worked with reputed design consultancy firm in India. An expert in temporary structures, this professional excels at creating efficient designs that meet project needs without compromising safety. Their hands-on experience allows them to foresee potential challenges and address them proactively. With a strong background in engineering principles, they ensure that every design is both functional and sustainable. Their collaborative approach fosters strong relationships with clients, ensuring that all requirements are understood and met. Always aiming for excellence, this individual is dedicated to delivering high-quality results on time and within budget. Expert in designing temporary structures with a focus on safety.",
+      image: "👥"
+    },
+    {
+      name: "Dheeraj Kumar",
+      position: "CAD Engineer",
+      bio: "Dedicated to enhancing the field of bridge consultancy, this professional combines technical expertise with innovative thinking. They have successfully worked on numerous high-profile projects, bringing a wealth of knowledge and experience. Their strategic approach to design ensures that each project is not only aesthetically pleasing but also structurally sound. An advocate for teamwork and collaboration, they work closely with clients to understand their vision and bring it to life. Their commitment to quality and efficiency sets them apart in the industry, making every project a success. Innovative CAD engineer for enabling Structure drawings with a strategic approach to drawing.",
+      image: "👥"
+    },
+    {
+      name: "Kiran Choubey",
+      position: "Human Resourcse -Administration",
+      bio: "She has a Bachelor’s Degree in Art from Veer Kumwar Singh University, Bihar. She holds end-to-end responsibility of Human Resource Management and Administration of the Company.",
       image: "👥"
     }
   ];
