@@ -73,7 +73,7 @@ const Home = () => {
               Our Network of Specialized Expertise
             </h2>
             <p className="text-xl text-gray-600">
-              Each company brings unique expertise to India's infrastructure development
+              Four specialties, one mission: Building India’s future with precision
             </p>
           </div>
           
