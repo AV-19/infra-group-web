@@ -18,7 +18,7 @@ const Home = () => {
       keyService: "Launching girder design",
       icon: "🖥",
       link: "/rkc-infratech",
-      accentColor: "#3B82F6"
+      accentColor: "#4169e1" // Royal blue
     },
     {
       title: "IMAGINEERING BRIDGES",
@@ -26,7 +26,7 @@ const Home = () => {
       keyService: "Segment mold supply",
       icon: "🏭",
       link: "/imagineering-bridges",
-      accentColor: "#F97316"
+      accentColor: "#4169e1" // Royal blue
     },
     {
       title: "RIYARE CONSTRUCT",
@@ -34,7 +34,7 @@ const Home = () => {
       keyService: "U-girder installation",
       icon: "🌉",
       link: "/riyare-micro-construct",
-      accentColor: "#10B981"
+      accentColor: "#4169e1" // Royal blue
     },
     {
       title: "CHOUBEY OFFICE",
@@ -42,7 +42,7 @@ const Home = () => {
       keyService: "Angel funding",
       icon: "💰",
       link: "/rkchoubey-family-office",
-      accentColor: "#8B5CF6"
+      accentColor: "#4169e1" // Royal blue
     }
   ];
 
