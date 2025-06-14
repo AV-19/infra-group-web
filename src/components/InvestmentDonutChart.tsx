@@ -20,13 +20,12 @@ const renderLabel = ({
   cx,
   cy,
   midAngle,
-  innerRadius,
   outerRadius,
   percent,
   index,
   name
 }: any) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.9;
+  const radius = outerRadius * 0.8;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
   if (percent < 0.08) return null; // Skip very small sectors for clarity
@@ -62,7 +61,6 @@ const InvestmentDonutChart: React.FC<InvestmentDonutChartProps> = ({
       nameKey="sector"
       cx="50%"
       cy="50%"
-      innerRadius={60}
       outerRadius={100}
       label={renderLabel}
       labelLine={false}
@@ -91,3 +89,4 @@ const InvestmentDonutChart: React.FC<InvestmentDonutChartProps> = ({
 );
 
 export default InvestmentDonutChart;
+
