@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
+// Use Unsplash images for visual consistency, as in ProjectShowcase
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
@@ -17,7 +19,7 @@ const Projects = () => {
       location: "Vijaywada",
       year: "2024",
       details: "",
-      image: "🚇",
+      image: "https://images.unsplash.com/photo-1439337153520-7082a56a81f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", // Construction
       client: "NAVYUGA ENGINERING COMPANY LTD"
     },
     {
@@ -27,7 +29,7 @@ const Projects = () => {
       location: "Karnataka",
       year: "2023",
       details: "",
-      image: "🌉",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", // Design
       client: "AMRUTHA CONSTRUCTION PVT LTD"
     },
     {
@@ -37,7 +39,7 @@ const Projects = () => {
       location: "Shimla, India",
       year: "2023",
       details: "PIER CAP SHUTETRING, LAUNCHING GIRDER FOR ERECTION OF GIRDER, CASTING YARD, SEGMENT MOULD, GROUND SUPPORT SYSTEM (UNDER SLUNG LAUNCHING GIRDER), FORM WORK TRAVELLER",
-      image: "⚙️",
+      image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", // Design/Fabrication
       client: "GAWAR CONSTRUCTION LTD"
     },
     {
@@ -47,7 +49,7 @@ const Projects = () => {
       location: "Pune, Maharashtra",
       year: "2023",
       details: "PRE-TENSIONED GIRDER CASTING YARD, GIRDER SHUTTERING, PIER CAP CENTERING, ALL THE ENABLING STRUTCUTRE",
-      image: "🌊",
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", // Fabrication
       client: "GAWAR CONSTRUCTION LTD"
     },
     {
@@ -57,7 +59,7 @@ const Projects = () => {
       location: "Mumbai, Maharashtra",
       year: "2022",
       details: "PRE-TENSIONED U GIRDER CASTING YARD & ITS FOUNDATIONS, PRE-TENSIONED GIRDER CASTING YARD, CROSS ARM LIFTER, LIFTING BEAMS, REBAR CAGE LIFTERS, STACKING BEAMS, REBAR JIG, TRANSPORTATION FRAMES, PIER CAP CENTERING, STRESSING PLATFORM, MOVABLE SHED, ALL THE ENABLING STRUTCUTRE",
-      image: "🏗️",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", // Design
       client: "GAWAR CONSTRUCTION LTD"
     },
     {
@@ -67,7 +69,7 @@ const Projects = () => {
       location: "Rajasthan",
       year: "2022",
       details: "CASTING YARD, SEGMENT MOULD, PIER TABLE CENTERING, STITCH CENTERING ARRANGEMENT, STRONG BACK, SEGMENT LIFTER",
-      image: "🛣️",
+      image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", // Construction/Fabrication
       client: "JANDU CONSTRUCTION INDIA PVT LTD"
     }
   ];
@@ -120,11 +122,15 @@ const Projects = () => {
               const shouldTruncate = project.details && project.details.length > 80;
 
               return (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                  <div className="h-48 w-full overflow-hidden">
+                    <img 
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
                   <CardHeader>
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">{project.image}</span>
-                    </div>
                     <CardTitle className="text-lg text-center">{project.title}</CardTitle>
                     <div className="text-center">
                       <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
@@ -171,3 +177,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
