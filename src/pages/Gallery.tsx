@@ -87,7 +87,7 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Gallery Grid */}
+          {/* Gallery Grid - Only images, no text */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredItems.map((item, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -97,13 +97,6 @@ const Gallery = () => {
                     alt={item.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <span className="inline-block bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium mb-2">
-                    {item.category}
-                  </span>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
                 </div>
               </Card>
             ))}
