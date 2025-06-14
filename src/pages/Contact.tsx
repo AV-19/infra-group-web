@@ -178,7 +178,6 @@ const Contact = () => {
           <div>
             <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-              
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start space-x-4">
@@ -191,15 +190,22 @@ const Contact = () => {
                 ))}
               </div>
             </div>
-
-            {/* Map Placeholder */}
+            {/* Map Embedded instead of Placeholder */}
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Our Location</h3>
-              <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-primary text-6xl mb-4">🗺️</div>
-                  <p className="text-gray-600">Interactive map coming soon</p>
-                  <p className="text-sm text-gray-500">Bhopal, Madhya Pradesh</p>
+              <div className="rounded-lg overflow-hidden shadow-md">
+                <iframe
+                  title="RKC Infratech Group Location Bhopal"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d926.2020865266841!2d77.47075086959469!3d23.177932172725934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43294aedf23b%3A0x577ccab0481ee329!2s85%2C%20RRR%20House%2C%20Capitol%20Hill%20(Alpine%20Jewel)%2C%20Kolar%20Rd%2C%20Raj%20Homes%20Colony%2C%20Bhopal%2C%20Madhya%20Pradesh%20462042!5e0!3m2!1sen!2sin!4v1718378269073!5m2!1sen!2sin"
+                  width="100%"
+                  height="256"
+                  loading="lazy"
+                  allowFullScreen={true}
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-64 border-0"
+                ></iframe>
+                <div className="text-center text-gray-600 text-sm mt-2">
+                  85, RRR House, Capitol Hill (Alpine Jewel), Kolar Road, Bhopal, Madhya Pradesh, India - 462042
                 </div>
               </div>
             </div>
