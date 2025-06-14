@@ -18,6 +18,7 @@ import RKChoubeyFamilyOffice from "./pages/RKChoubeyFamilyOffice";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import AdminPortal from "./pages/AdminPortal";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <div className="min-h-screen flex flex-col">
           <Navigation />
           <main className="flex-grow">
