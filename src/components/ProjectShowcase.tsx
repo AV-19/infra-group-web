@@ -1,5 +1,6 @@
-
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const ProjectShowcase = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -54,6 +55,9 @@ const ProjectShowcase = () => {
   const filteredProjects = activeFilter === "All" 
     ? projects 
     : projects.filter(project => project.category === activeFilter);
+  
+  // Only show first 4 projects
+  const displayedProjects = filteredProjects.slice(0, 4);
 
   return (
     <section className="py-16 bg-gray-50">
@@ -86,7 +90,7 @@ const ProjectShowcase = () => {
 
         {/* Masonry Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <div 
               key={project.id}
               className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in ${
@@ -119,6 +123,12 @@ const ProjectShowcase = () => {
               </div>
             </div>
           ))}
+        </div>
+        {/* Explore More Button */}
+        <div className="flex justify-center mt-10">
+          <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 transition">
+            <Link to="/projects">Explore more Projects</Link>
+          </Button>
         </div>
       </div>
     </section>
