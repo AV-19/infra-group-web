@@ -1,7 +1,8 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Upload, Send } from "lucide-react";
+
+const WHATSAPP_PHONE = "917880123365"; // use your WhatsApp number, in international format without '+'
 
 const CTAFooterSection = () => {
   const [activeForm, setActiveForm] = useState<string | null>(null);
@@ -12,28 +13,32 @@ const CTAFooterSection = () => {
       title: "Need a Design Review?",
       fields: ["Name", "Email", "Upload Drawing"],
       color: "bg-blue-500",
-      icon: "🖥"
+      icon: "🖥",
+      waMsg: "Hi, I'm interested in a Design Review.",
     },
     {
       id: "fabrication",
       title: "Request Fabrication Quote",
       fields: ["Material", "Quantity", "Deadline"],
       color: "bg-orange-500",
-      icon: "🏭"
+      icon: "🏭",
+      waMsg: "Hello, I want to request a Fabrication Quote.",
     },
     {
       id: "consulting",
       title: "Consult a Bridge Engineer",
       fields: ["Project Stage", "Location"],
       color: "bg-green-500",
-      icon: "🌉"
+      icon: "🌉",
+      waMsg: "Hi, I need to consult a Bridge Engineer.",
     },
     {
       id: "investment",
       title: "Seek Investment",
       fields: ["Startup Name", "Stage", "Brief"],
       color: "bg-purple-500",
-      icon: "💰"
+      icon: "💰",
+      waMsg: "Hello, I'd like to discuss an investment opportunity.",
     }
   ];
 
@@ -57,58 +62,21 @@ const CTAFooterSection = () => {
                 <h3 className="text-lg font-semibold mb-3">{form.title}</h3>
               </div>
 
-              {activeForm === form.id ? (
-                <div className="space-y-3">
-                  {form.fields.map((field, index) => (
-                    <div key={index}>
-                      {field === "Upload Drawing" ? (
-                        <div className="flex items-center justify-center w-full">
-                          <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer hover:border-gray-500">
-                            <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                              <Upload className="w-8 h-8 mb-2 text-gray-400" />
-                              <p className="text-sm text-gray-400">Upload file</p>
-                            </div>
-                            <input type="file" className="hidden" />
-                          </label>
-                        </div>
-                      ) : field === "Brief" ? (
-                        <textarea
-                          placeholder={field}
-                          className="w-full p-2 bg-gray-700 rounded border border-gray-600 text-white placeholder-gray-400"
-                          rows={3}
-                        />
-                      ) : (
-                        <input
-                          type={field === "Email" ? "email" : "text"}
-                          placeholder={field}
-                          className="w-full p-2 bg-gray-700 rounded border border-gray-600 text-white placeholder-gray-400"
-                        />
-                      )}
-                    </div>
-                  ))}
-                  <div className="flex space-x-2">
-                    <Button size="sm" className={`${form.color} hover:opacity-90 flex-1`}>
-                      <Send className="w-4 h-4 mr-1" />
-                      Submit
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      onClick={() => setActiveForm(null)}
-                      className="border-gray-600 text-gray-300 hover:bg-gray-700"
-                    >
-                      Cancel
-                    </Button>
-                  </div>
-                </div>
-              ) : (
-                <Button
-                  onClick={() => setActiveForm(form.id)}
-                  className={`w-full ${form.color} hover:opacity-90`}
+              {/* WhatsApp Get Started button */}
+              <Button
+                asChild
+                className={`w-full ${form.color} hover:opacity-90`}
+              >
+                <a
+                  href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(form.waMsg)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Start WhatsApp chat about "${form.title}"`}
+                  title={`Start WhatsApp chat about "${form.title}"`}
                 >
                   Get Started
-                </Button>
-              )}
+                </a>
+              </Button>
             </div>
           ))}
         </div>
