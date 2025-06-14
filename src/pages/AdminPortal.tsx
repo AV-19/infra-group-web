@@ -36,6 +36,9 @@ const AdminPortal = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [gallery, setGallery] = useState<GalleryItem[]>([]);
 
+  // Section switching
+  const [activeSection, setActiveSection] = useState<"leads" | "project" | "gallery">("leads");
+
   // Project form state
   const [projectForm, setProjectForm] = useState<Project>({
     title: "",
@@ -112,11 +115,35 @@ const AdminPortal = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-2 md:px-12">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-center">Admin Portal</h1>
-        <div className="grid md:grid-cols-2 gap-10">
+        {/* Section switch button group */}
+        <div className="flex justify-center gap-2 mb-8">
+          <Button
+            variant={activeSection === "leads" ? "default" : "outline"}
+            onClick={() => setActiveSection("leads")}
+            className="flex-1"
+          >
+            Show Leads
+          </Button>
+          <Button
+            variant={activeSection === "project" ? "default" : "outline"}
+            onClick={() => setActiveSection("project")}
+            className="flex-1"
+          >
+            Add Project
+          </Button>
+          <Button
+            variant={activeSection === "gallery" ? "default" : "outline"}
+            onClick={() => setActiveSection("gallery")}
+            className="flex-1"
+          >
+            Add Gallery Image
+          </Button>
+        </div>
 
-          {/* Contact Details */}
+        {/* Content */}
+        {activeSection === "leads" && (
           <section className="bg-white shadow rounded-lg p-6">
             <h2 className="text-2xl font-semibold mb-4">Contact Details</h2>
             {/* For demo: Button to simulate contact form submission */}
@@ -139,8 +166,9 @@ const AdminPortal = () => {
               </div>
             )}
           </section>
+        )}
 
-          {/* Project Management */}
+        {activeSection === "project" && (
           <section className="bg-white shadow rounded-lg p-6">
             <h2 className="text-2xl font-semibold mb-4">Add Project</h2>
             <form onSubmit={handleAddProject} className="space-y-3">
@@ -220,50 +248,50 @@ const AdminPortal = () => {
               </div>
             </div>
           </section>
-        </div>
+        )}
 
-        {/* Gallery Management */}
-        <section className="bg-white shadow rounded-lg p-6 mt-10">
-          <h2 className="text-2xl font-semibold mb-4">Gallery Management</h2>
-          <form onSubmit={handleAddGallery} className="flex flex-col md:flex-row gap-4 mb-4">
-            <Input
-              type="text"
-              name="image"
-              placeholder="Image URL"
-              value={galleryForm.image}
-              onChange={handleGalleryChange}
-              required
-              className="flex-1"
-            />
-            <Input
-              type="text"
-              name="description"
-              placeholder="Description"
-              value={galleryForm.description}
-              onChange={handleGalleryChange}
-              required
-              className="flex-1"
-            />
-            <Button type="submit">Add Photo</Button>
-          </form>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {gallery.map((item, idx) => (
-              <div key={idx} className="border rounded overflow-hidden">
-                {item.image && (
-                  <img
-                    src={item.image}
-                    alt={item.description}
-                    className="w-full h-32 object-cover"
-                  />
-                )}
-                <div className="p-2 text-sm">{item.description}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {activeSection === "gallery" && (
+          <section className="bg-white shadow rounded-lg p-6">
+            <h2 className="text-2xl font-semibold mb-4">Gallery Management</h2>
+            <form onSubmit={handleAddGallery} className="flex flex-col gap-4 mb-4">
+              <Input
+                type="text"
+                name="image"
+                placeholder="Image URL"
+                value={galleryForm.image}
+                onChange={handleGalleryChange}
+                required
+              />
+              <Input
+                type="text"
+                name="description"
+                placeholder="Description"
+                value={galleryForm.description}
+                onChange={handleGalleryChange}
+                required
+              />
+              <Button type="submit">Add Photo</Button>
+            </form>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {gallery.map((item, idx) => (
+                <div key={idx} className="border rounded overflow-hidden">
+                  {item.image && (
+                    <img
+                      src={item.image}
+                      alt={item.description}
+                      className="w-full h-32 object-cover"
+                    />
+                  )}
+                  <div className="p-2 text-sm">{item.description}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );
 };
 
 export default AdminPortal;
+
