@@ -1,6 +1,7 @@
-
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   const leadership = [
@@ -61,6 +62,21 @@ const About = () => {
     "Indian Railways Approved Vendor"
   ];
 
+  // State for expanded bios
+  const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
+
+  const handleReadMore = (index: number) => {
+    setExpandedIndexes((prev) =>
+      prev.includes(index)
+        ? prev.filter((i) => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  const truncate = (text: string, n: number) => {
+    return text.length > n ? text.slice(0, n) + "..." : text;
+  };
+
   return (
     <div>
       <Hero
@@ -110,20 +126,37 @@ const About = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {leadership.map((leader, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-4xl">{leader.image}</span>
-                  </div>
-                  <CardTitle className="text-xl">{leader.name}</CardTitle>
-                  <p className="text-primary font-medium">{leader.position}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{leader.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {leadership.map((leader, index) => {
+              const isExpanded = expandedIndexes.includes(index);
+              const shouldTruncate = leader.bio.length > 120;
+              return (
+                <Card key={index} className="text-center">
+                  <CardHeader>
+                    <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-4xl">{leader.image}</span>
+                    </div>
+                    <CardTitle className="text-xl">{leader.name}</CardTitle>
+                    <p className="text-primary font-medium">{leader.position}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 mb-2">
+                      {isExpanded || !shouldTruncate
+                        ? leader.bio
+                        : truncate(leader.bio, 120)}
+                    </p>
+                    {shouldTruncate && (
+                      <Button
+                        variant="link"
+                        className="text-primary p-0 h-auto text-sm"
+                        onClick={() => handleReadMore(index)}
+                      >
+                        {isExpanded ? "Read less" : "Read more"}
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
