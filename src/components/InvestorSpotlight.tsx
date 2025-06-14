@@ -2,99 +2,120 @@
 import { TrendingUp, Users, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import InvestmentDonutChart from "./InvestmentDonutChart";
 
-const InvestorSpotlight = () => {
-  const investmentStats = [
-    { sector: "Green Technology", percentage: 40, color: "bg-green-500" },
-    { sector: "Modular Bridges", percentage: 30, color: "bg-blue-500" },
-    { sector: "Smart Infrastructure", percentage: 20, color: "bg-purple-500" },
-    { sector: "Construction Tech", percentage: 10, color: "bg-orange-500" }
-  ];
+// Vibrant color palette matching Tailwind defaults
+const investmentStats = [
+  { sector: "Green Tech", percentage: 40, color: "#22c55e" },
+  { sector: "Modular Bridges", percentage: 30, color: "#3b82f6" },
+  { sector: "Smart Infra", percentage: 20, color: "#a21caf" },
+  { sector: "Const. Tech", percentage: 10, color: "#f59e42" }
+];
 
-  return (
-    <section className="py-16 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Building Beyond Bridges – Investing in India's Infrastructure Future
-          </h2>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            R.K. Choubey Family Office is strategically funding the next generation of infrastructure innovations
-          </p>
-        </div>
+const statsArr = [
+  {
+    value: "25+",
+    label: "Startups Funded",
+    color: "text-yellow-400"
+  },
+  {
+    value: "₹200Cr+",
+    label: "Total Investment",
+    color: "text-green-400"
+  },
+  {
+    value: "80%",
+    label: "Success Rate",
+    color: "text-blue-400"
+  },
+  {
+    value: "12",
+    label: "States Covered",
+    color: "text-purple-400"
+  }
+];
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Investment Distribution */}
-          <div>
-            <h3 className="text-2xl font-bold mb-6 flex items-center">
-              <TrendingUp className="mr-3" size={28} />
-              Investment Portfolio Distribution
-            </h3>
-            <div className="space-y-4">
-              {investmentStats.map((stat, index) => (
-                <div key={index} className="bg-white/10 rounded-lg p-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-medium">{stat.sector}</span>
-                    <span className="font-bold">{stat.percentage}%</span>
-                  </div>
-                  <div className="w-full bg-white/20 rounded-full h-3">
-                    <div 
-                      className={`${stat.color} h-3 rounded-full transition-all duration-1000`}
-                      style={{ width: `${stat.percentage}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+const InvestorSpotlight = () => (
+  <section className="py-20 bg-gradient-to-br from-indigo-900 via-blue-900 to-black text-white relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+          Building Beyond Bridges — Investing in India's Infrastructure Future
+        </h2>
+        <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <span className="font-semibold text-yellow-400">R.K. Choubey Family Office</span>{" "}
+          is strategically funding the next generation of infrastructure innovation.
+        </p>
+      </div>
+      <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-stretch">
+        {/* Pie chart column */}
+        <div className="bg-white/5 rounded-2xl shadow-lg p-8 flex-1 flex flex-col justify-center items-center">
+          <h3 className="text-xl font-semibold mb-8 flex items-center">
+            <TrendingUp className="mr-3 text-green-400" size={28} />
+            Portfolio Distribution
+          </h3>
+          <InvestmentDonutChart data={investmentStats} />
+          <div className="flex flex-wrap mt-6 gap-4 justify-center">
+            {investmentStats.map((stat, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 text-sm font-medium"
+              >
+                <span
+                  className="inline-block w-4 h-4 rounded-full"
+                  style={{ background: stat.color }}
+                />
+                {stat.sector}
+              </div>
+            ))}
           </div>
-
-          {/* Testimonial & Stats */}
-          <div className="space-y-8">
-            <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
-              <div className="flex items-center mb-4">
-                <Users className="mr-3 text-yellow-400" size={24} />
-                <h4 className="text-lg font-semibold">Success Story</h4>
-              </div>
-              <blockquote className="text-lg italic mb-4">
-                "Choubey Family Office's strategic investment and mentorship helped us scale our precast technology startup from concept to a ₹50 crore valuation in just 18 months."
-              </blockquote>
-              <cite className="text-sm opacity-75">
-                — Priya Sharma, CEO, ModularBridge Technologies
-              </cite>
+        </div>
+        {/* Details & stats column */}
+        <div className="flex-1 flex flex-col gap-8 justify-between">
+          <div className="rounded-2xl p-6 bg-white/10 backdrop-blur-sm border border-white/10 shadow-lg flex flex-col gap-2 animate-fade-in">
+            <div className="flex items-center mb-2">
+              <Users className="mr-3 text-yellow-400" size={24} />
+              <h4 className="text-lg font-semibold">Success Story</h4>
             </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400 mb-2">25+</div>
-                <div className="text-sm opacity-75">Startups Funded</div>
+            <blockquote className="text-lg italic mb-2 leading-relaxed">
+              “Choubey Family Office’s strategic investment and mentorship helped us scale our precast technology startup from concept to a <span className="text-yellow-400 font-bold">₹50 crore valuation</span> in just 18 months.”
+            </blockquote>
+            <cite className="text-sm opacity-80 font-medium">
+              — Priya Sharma, CEO, ModularBridge Technologies
+            </cite>
+          </div>
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 gap-6 md:gap-10 mt-2">
+            {statsArr.map((s, i) => (
+              <div
+                key={i}
+                className={`text-center bg-white/5 rounded-xl p-6 hover:scale-105 transition-transform duration-200 shadow`}
+              >
+                <div className={`text-4xl font-bold mb-2 ${s.color}`}>{s.value}</div>
+                <div className="text-sm opacity-75">{s.label}</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-2">₹200Cr+</div>
-                <div className="text-sm opacity-75">Total Investment</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">80%</div>
-                <div className="text-sm opacity-75">Success Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-2">12</div>
-                <div className="text-sm opacity-75">States Covered</div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <Button asChild size="lg" className="bg-yellow-500 text-black hover:bg-yellow-400">
-                <Link to="/rkchoubey-family-office">
-                  <Lightbulb className="mr-2" size={20} />
-                  Explore Investment Opportunities
-                </Link>
-              </Button>
-            </div>
+            ))}
+          </div>
+          {/* Button */}
+          <div className="flex justify-center mt-3">
+            <Button
+              asChild
+              size="lg"
+              className="bg-yellow-500 text-black hover:bg-yellow-400 font-semibold px-8 py-3 rounded-xl shadow-lg"
+            >
+              <Link to="/rkchoubey-family-office">
+                <Lightbulb className="mr-2" size={20} />
+                Explore Investment Opportunities
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+    {/* Subtle gradient flair at the bottom for style */}
+    <div className="absolute bottom-0 left-0 w-full h-36 bg-gradient-to-t from-primary/80 via-transparent to-transparent pointer-events-none z-0"></div>
+  </section>
+);
 
 export default InvestorSpotlight;
+
