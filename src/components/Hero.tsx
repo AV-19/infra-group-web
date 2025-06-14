@@ -13,7 +13,7 @@ interface HeroProps {
 
 const Hero = ({ title, subtitle, backgroundImages, children, className = "" }: HeroProps) => {
   const defaultImages = [
-    "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    "https://unsplash.com/photos/river-bridge-construction-project-cLnGpHrd8_c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
     "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
     "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
     "https://images.unsplash.com/photo-1439337153520-7082a56a81f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
