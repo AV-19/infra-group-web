@@ -33,7 +33,7 @@ const PainPointsSection = () => {
             Your Challenges, Our Solutions
           </h2>
           <p className="text-xl text-gray-600">
-            We understand infrastructure pain points and have built specialized solutions
+           Your Infrastructure Vision, Delivered with Precision Engineering & Customized Solutions.
           </p>
         </div>
 
