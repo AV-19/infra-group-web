@@ -7,8 +7,8 @@ const About = () => {
   const leadership = [
     {
       name: "R.K. Choubey",
-      position: "Chairman & Founder",
-      bio: "With over 20 years of experience in infrastructure development, R.K. Choubey has been instrumental in shaping India's bridge construction landscape.",
+      position: "Founder, Design - Head Enabling/Temporary Structures Specialist",
+      bio: "M. Tech from Dr APJ Abdul Kalam Technical university Lucknow (formerly known as UPTU) and Post Graduate in Project Management from NICMAR. He has 14+ Year experience in Temporary structure design and has worked with reputed organisation in the field of bridge engineering. Have designed various LG, Lifting Frame, Ground Support System, Precast Mould, Pre-tensioning Yard and various type of shuttering. With a passion for structural design, Mr. Choubey brings innovative solutions to bridge consultancy. A keen eye for detail ensures that every project meets industry standards and client expectations. Their experience spans various types of infrastructures, allowing for a versatile approach to problem-solving. Committed to continuous learning, they stay updated on the latest trends and technologies in the field. This dedication translates into exceptional service and client satisfaction, making them a valuable asset in every project.",
       image: "👨‍💼"
     },
     {
