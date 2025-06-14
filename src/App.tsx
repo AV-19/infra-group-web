@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +17,7 @@ import RiyareMicroConstruct from "./pages/RiyareMicroConstruct";
 import RKChoubeyFamilyOffice from "./pages/RKChoubeyFamilyOffice";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import AdminPortal from "./pages/AdminPortal";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +42,7 @@ const App = () => (
               <Route path="/riyare-micro-construct" element={<RiyareMicroConstruct />} />
               <Route path="/rkchoubey-family-office" element={<RKChoubeyFamilyOffice />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/admin" element={<AdminPortal />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
