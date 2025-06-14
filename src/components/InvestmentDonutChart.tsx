@@ -10,6 +10,8 @@ type PortfolioEntry = {
 
 interface InvestmentDonutChartProps {
   data: PortfolioEntry[];
+  width?: number;
+  height?: number;
 }
 
 const RADIAN = Math.PI / 180;
@@ -48,8 +50,8 @@ const renderLabel = ({
   );
 };
 
-const InvestmentDonutChart: React.FC<InvestmentDonutChartProps> = ({ data }) => (
-  <ResponsiveContainer width="100%" height={260}>
+const InvestmentDonutChart: React.FC<InvestmentDonutChartProps> = ({ data, width = 170, height = 170 }) => (
+  <ResponsiveContainer width={width} height={height}>
     <PieChart>
       <Pie
         data={data}

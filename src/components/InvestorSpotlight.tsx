@@ -54,7 +54,7 @@ const InvestorSpotlight = () => (
             Portfolio
           </h3>
           <div className="w-[170px] h-[170px]">
-            <InvestmentDonutChart data={investmentStats} />
+            <InvestmentDonutChart data={investmentStats} width={170} height={170} />
           </div>
           <div className="flex flex-wrap mt-4 gap-2 justify-center">
             {investmentStats.map((stat, i) => (
