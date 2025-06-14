@@ -74,16 +74,18 @@ const Footer = () => {
                   Gallery
                 </a>
               </li>
-              <li>
+              {/*   <li>
                 <a href="/manufacturing" className="hover:text-white transition-colors">
                   Manufacturing
                 </a>
               </li>
+              
               <li>
                 <a href="/news" className="hover:text-white transition-colors">
                   News & Updates
                 </a>
               </li>
+              */}
               <li>
                 <a href="/contact" className="hover:text-white transition-colors">
                   Contact Us
