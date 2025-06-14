@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -190,13 +189,13 @@ const Contact = () => {
                 ))}
               </div>
             </div>
-            {/* Map Embedded instead of Placeholder */}
+            {/* Map Embedded with Pin Marker */}
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Our Location</h3>
               <div className="rounded-lg overflow-hidden shadow-md">
                 <iframe
-                  title="RKC Infratech Group Location Bhopal"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d926.2020865266841!2d77.47075086959469!3d23.177932172725934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43294aedf23b%3A0x577ccab0481ee329!2s85%2C%20RRR%20House%2C%20Capitol%20Hill%20(Alpine%20Jewel)%2C%20Kolar%20Rd%2C%20Raj%20Homes%20Colony%2C%20Bhopal%2C%20Madhya%20Pradesh%20462042!5e0!3m2!1sen!2sin!4v1718378269073!5m2!1sen!2sin"
+                  title="RKC Infratech Group Location Bhopal with Marker"
+                  src="https://www.google.com/maps?q=23.177932,77.470751&z=18&output=embed"
                   width="100%"
                   height="256"
                   loading="lazy"
