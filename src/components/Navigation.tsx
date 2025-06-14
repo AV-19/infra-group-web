@@ -22,7 +22,7 @@ const Navigation = () => {
     { path: "/gallery", label: "Gallery" },
     //{ path: "/manufacturing", label: "Manufacturing" },
    // { path: "/news", label: "News" },
-    { path: "/contact", label: "Contact" },
+    { path: "/contact", label: "Contact" }, // <--- this is the Contact button
   ];
 
   const getLogoForCurrentPage = () => {
@@ -101,7 +101,7 @@ const Navigation = () => {
                     to={item.path}
                     className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                       location.pathname === item.path
-                        ? "text-primary border-b-2 border-primary"
+                        ? "text-primary border-b-2 border-primary bg-primary/10 rounded shadow-sm" // Highlight active nav button
                         : "text-gray-700 hover:text-primary"
                     }`}
                   >
@@ -173,3 +173,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
