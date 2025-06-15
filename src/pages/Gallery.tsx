@@ -31,12 +31,7 @@ const Gallery = () => {
       description: "Advanced testing and quality assurance facility",
       image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
-    {
-      title: "Mumbai Metro Bridge",
-      category: "Projects",
-      description: "Completed precast segmental bridge construction",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-    },
+    
     {
       title: "Highway Overpass",
       category: "Projects",
@@ -48,12 +43,6 @@ const Gallery = () => {
       category: "Manufacturing",
       description: "Precast segment production line",
       image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      title: "Steel Fabrication",
-      category: "Manufacturing",
-      description: "Precision steel structure fabrication",
-      image: "https://images.unsplash.com/photo-1565072318004-1fe9b1a2ee89?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     }
   ];
 
