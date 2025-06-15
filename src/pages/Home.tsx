@@ -19,7 +19,7 @@ const Home = () => {
       icon: "🖥",
       link: "/rkc-infratech",
       accentColor: "#4169e1", // Royal blue
-      projectImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Engineering design
+      projectImage: "https://i.pinimg.com/736x/bb/e7/0c/bbe70ccd44db21852d9a7de9da4c999b.jpg" // Engineering design
     },
     {
       title: "IMAGINEERING BRIDGES",
