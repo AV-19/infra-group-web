@@ -20,6 +20,7 @@ const ContactForm = () => {
     name: "",
     email: "",
     company: "",
+    contact_number: "",
     service: "",
     message: ""
   });
@@ -46,6 +47,7 @@ const ContactForm = () => {
         name: formData.name,
         email: formData.email,
         company: formData.company || null,
+        contact_number: formData.contact_number || null,
         service: formData.service || null,
         message: formData.message
       }
@@ -68,6 +70,7 @@ const ContactForm = () => {
       name: "",
       email: "",
       company: "",
+      contact_number: "",
       service: "",
       message: ""
     });
@@ -120,19 +123,35 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                  Company/Organization
-                </label>
-                <Input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  placeholder="Company name"
-                  className="hover:shadow focus:shadow-lg transition-shadow"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                    Company/Organization
+                  </label>
+                  <Input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    placeholder="Company name"
+                    className="hover:shadow focus:shadow-lg transition-shadow"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact_number" className="block text-sm font-medium text-gray-700 mb-1">
+                    Contact Number
+                  </label>
+                  <Input
+                    type="tel"
+                    id="contact_number"
+                    name="contact_number"
+                    value={formData.contact_number}
+                    onChange={handleInputChange}
+                    placeholder="e.g. +91 9876543210"
+                    className="hover:shadow focus:shadow-lg transition-shadow"
+                  />
+                </div>
               </div>
               <div>
                 <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
@@ -184,3 +203,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+

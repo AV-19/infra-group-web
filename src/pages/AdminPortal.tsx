@@ -200,6 +200,7 @@ const AdminPortal = () => {
                     <div><span className="font-semibold">Name:</span> {c.name}</div>
                     <div><span className="font-semibold">Email:</span> {c.email}</div>
                     <div><span className="font-semibold">Company:</span> {c.company ?? "--"}</div>
+                    <div><span className="font-semibold">Contact Number:</span> {c.contact_number ?? "--"}</div>
                     <div><span className="font-semibold">Service:</span> {c.service ?? "--"}</div>
                     <div><span className="font-semibold">Message:</span> {c.message ?? "--"}</div>
                   </div>
