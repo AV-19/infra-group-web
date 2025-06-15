@@ -9,7 +9,96 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          company: string | null
+          created_at: string | null
+          email: string
+          id: string
+          message: string | null
+          name: string
+          service: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string | null
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          service?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          service?: string | null
+        }
+        Relationships: []
+      }
+      gallery: {
+        Row: {
+          created_at: string | null
+          description: string
+          id: string
+          image: string
+        }
+        Insert: {
+          created_at?: string | null
+          description: string
+          id?: string
+          image: string
+        }
+        Update: {
+          created_at?: string | null
+          description?: string
+          id?: string
+          image?: string
+        }
+        Relationships: []
+      }
+      projects: {
+        Row: {
+          client: string
+          created_at: string | null
+          details: string
+          firm: string
+          id: string
+          image: string | null
+          location: string
+          title: string
+          type: string
+          year: string
+        }
+        Insert: {
+          client: string
+          created_at?: string | null
+          details: string
+          firm: string
+          id?: string
+          image?: string | null
+          location: string
+          title: string
+          type: string
+          year: string
+        }
+        Update: {
+          client?: string
+          created_at?: string | null
+          details?: string
+          firm?: string
+          id?: string
+          image?: string | null
+          location?: string
+          title?: string
+          type?: string
+          year?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

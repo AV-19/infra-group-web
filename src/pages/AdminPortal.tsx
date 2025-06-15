@@ -1,46 +1,81 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { supabase } from "@/integrations/supabase/client";
 
 // Utility types
 type ContactSubmission = {
+  id: string;
   name: string;
   email: string;
-  company: string;
-  service: string;
-  message: string;
+  company: string | null;
+  service: string | null;
+  message: string | null;
+  created_at?: string | null;
 };
 
 type Project = {
+  id: string;
   title: string;
   firm: string;
   type: string;
   location: string;
   year: string;
   details: string;
-  image: string;
+  image: string | null;
   client: string;
+  created_at?: string | null;
 };
 
 type GalleryItem = {
+  id: string;
   image: string;
   description: string;
+  created_at?: string | null;
 };
 
 // Main Admin Portal page
 const AdminPortal = () => {
-  // In-memory state for demo purposes (lost on reload)
+  // State for each entity
   const [contactSubmissions, setContactSubmissions] = useState<ContactSubmission[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
   const [gallery, setGallery] = useState<GalleryItem[]>([]);
+
+  // Fetch data from Supabase on load
+  useEffect(() => {
+    // Fetch leads
+    supabase
+      .from("contact_submissions")
+      .select("*")
+      .order("created_at", { ascending: false })
+      .then(({ data, error }) => {
+        if (!error && data) setContactSubmissions(data as ContactSubmission[]);
+      });
+    // Fetch projects
+    supabase
+      .from("projects")
+      .select("*")
+      .order("created_at", { ascending: false })
+      .then(({ data, error }) => {
+        if (!error && data) setProjects(data as Project[]);
+      });
+    // Fetch gallery
+    supabase
+      .from("gallery")
+      .select("*")
+      .order("created_at", { ascending: false })
+      .then(({ data, error }) => {
+        if (!error && data) setGallery(data as GalleryItem[]);
+      });
+  }, []);
 
   // Section switching
   const [activeSection, setActiveSection] = useState<"leads" | "project" | "gallery">("leads");
 
   // Project form state
-  const [projectForm, setProjectForm] = useState<Project>({
+  const [projectForm, setProjectForm] = useState<Omit<Project, "id" | "created_at">>({
     title: "",
     firm: "",
     type: "",
@@ -52,7 +87,7 @@ const AdminPortal = () => {
   });
 
   // Gallery form state
-  const [galleryForm, setGalleryForm] = useState<GalleryItem>({
+  const [galleryForm, setGalleryForm] = useState<Omit<GalleryItem, "id" | "created_at">>({
     image: "",
     description: "",
   });
@@ -73,44 +108,51 @@ const AdminPortal = () => {
     });
   };
 
-  // Simulate Contact Submissions (for demo, we can have a button to add mock data)
-  const addMockContact = () => {
-    setContactSubmissions((prev) => [
-      ...prev,
-      {
-        name: "Sample User",
-        email: "sample@email.com",
-        company: "Example Corp",
-        service: "General Inquiry",
-        message: "Hello, this is a sample message.",
-      }
-    ]);
-  };
-
-  // Handle project add
-  const handleAddProject = (e: React.FormEvent) => {
+  // Handle project add (Supabase insert)
+  const handleAddProject = async (e: React.FormEvent) => {
     e.preventDefault();
-    setProjects(prev => [...prev, projectForm]);
-    setProjectForm({
-      title: "",
-      firm: "",
-      type: "",
-      location: "",
-      year: "",
-      details: "",
-      image: "",
-      client: "",
-    });
+    // Insert to Supabase
+    const { data, error } = await supabase.from("projects").insert([{ ...projectForm }]).select();
+    if (!error && data && data.length > 0) {
+      setProjects(prev => [data[0], ...prev]);
+      setProjectForm({
+        title: "",
+        firm: "",
+        type: "",
+        location: "",
+        year: "",
+        details: "",
+        image: "",
+        client: "",
+      });
+    } else {
+      // You might want to add toast for error (future enhancement)
+      console.error("Error adding project", error);
+    }
   };
 
   // Handle gallery add
-  const handleAddGallery = (e: React.FormEvent) => {
+  const handleAddGallery = async (e: React.FormEvent) => {
     e.preventDefault();
-    setGallery(prev => [...prev, galleryForm]);
-    setGalleryForm({
-      image: "",
-      description: "",
-    });
+    const { data, error } = await supabase.from("gallery").insert([{ ...galleryForm }]).select();
+    if (!error && data && data.length > 0) {
+      setGallery(prev => [data[0], ...prev]);
+      setGalleryForm({
+        image: "",
+        description: "",
+      });
+    } else {
+      console.error("Error adding gallery item", error);
+    }
+  };
+
+  // Fetch latest contact submissions
+  const fetchContactSubmissions = async () => {
+    const { data, error } = await supabase
+      .from("contact_submissions")
+      .select("*")
+      .order("created_at", { ascending: false });
+    if (!error && data) setContactSubmissions(data as ContactSubmission[]);
   };
 
   return (
@@ -146,21 +188,20 @@ const AdminPortal = () => {
         {activeSection === "leads" && (
           <section className="bg-white shadow rounded-lg p-6">
             <h2 className="text-2xl font-semibold mb-4">Contact Details</h2>
-            {/* For demo: Button to simulate contact form submission */}
-            <Button variant="outline" className="mb-4" onClick={addMockContact}>
-              Add Mock Contact Submission
+            <Button variant="outline" className="mb-4" onClick={fetchContactSubmissions}>
+              Refresh Contact Submissions
             </Button>
             {contactSubmissions.length === 0 ? (
               <div className="text-gray-500">No submissions yet.</div>
             ) : (
               <div className="space-y-4 max-h-72 overflow-y-auto">
-                {contactSubmissions.map((c, i) => (
-                  <div key={i} className="border-b pb-2">
+                {contactSubmissions.map((c) => (
+                  <div key={c.id} className="border-b pb-2">
                     <div><span className="font-semibold">Name:</span> {c.name}</div>
                     <div><span className="font-semibold">Email:</span> {c.email}</div>
-                    <div><span className="font-semibold">Company:</span> {c.company}</div>
-                    <div><span className="font-semibold">Service:</span> {c.service}</div>
-                    <div><span className="font-semibold">Message:</span> {c.message}</div>
+                    <div><span className="font-semibold">Company:</span> {c.company ?? "--"}</div>
+                    <div><span className="font-semibold">Service:</span> {c.service ?? "--"}</div>
+                    <div><span className="font-semibold">Message:</span> {c.message ?? "--"}</div>
                   </div>
                 ))}
               </div>
@@ -239,8 +280,8 @@ const AdminPortal = () => {
             <div className="mt-6">
               <h3 className="text-lg font-medium mb-2">Project List</h3>
               <div className="max-h-40 overflow-y-auto space-y-2">
-                {projects.map((p, idx) => (
-                  <div key={idx} className="border-b pb-1">
+                {projects.map((p) => (
+                  <div key={p.id} className="border-b pb-1">
                     <div><b>{p.title}</b> ({p.year}) - {p.firm}</div>
                     <div className="text-xs text-gray-600">Client: {p.client}</div>
                   </div>
@@ -273,8 +314,8 @@ const AdminPortal = () => {
               <Button type="submit">Add Photo</Button>
             </form>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {gallery.map((item, idx) => (
-                <div key={idx} className="border rounded overflow-hidden">
+              {gallery.map((item) => (
+                <div key={item.id} className="border rounded overflow-hidden">
                   {item.image && (
                     <img
                       src={item.image}
@@ -294,4 +335,3 @@ const AdminPortal = () => {
 };
 
 export default AdminPortal;
-
