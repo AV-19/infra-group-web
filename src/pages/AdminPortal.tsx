@@ -1,9 +1,20 @@
-
 import React, { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
+import {
+  AlertDialog,
+  AlertDialogOverlay,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 // Utility types
 type ContactSubmission = {
@@ -14,6 +25,7 @@ type ContactSubmission = {
   service: string | null;
   message: string | null;
   created_at?: string | null;
+  contact_number?: string | null;
 };
 
 type Project = {
@@ -155,6 +167,19 @@ const AdminPortal = () => {
     if (!error && data) setContactSubmissions(data as ContactSubmission[]);
   };
 
+  // Function to delete a contact by id
+  const handleDeleteLead = async (id: string) => {
+    const { error } = await supabase.from("contact_submissions").delete().eq("id", id);
+    if (!error) {
+      setContactSubmissions(prev => prev.filter(c => c.id !== id));
+    } else {
+      console.error("Error deleting lead:", error);
+    }
+  };
+
+  // UI state for tracking which dialog's open
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-2 md:px-12">
       <div className="max-w-2xl mx-auto">
@@ -196,13 +221,41 @@ const AdminPortal = () => {
             ) : (
               <div className="space-y-4 max-h-72 overflow-y-auto">
                 {contactSubmissions.map((c) => (
-                  <div key={c.id} className="border-b pb-2">
-                    <div><span className="font-semibold">Name:</span> {c.name}</div>
-                    <div><span className="font-semibold">Email:</span> {c.email}</div>
-                    <div><span className="font-semibold">Company:</span> {c.company ?? "--"}</div>
-                    <div><span className="font-semibold">Contact Number:</span> {c.contact_number ?? "--"}</div>
-                    <div><span className="font-semibold">Service:</span> {c.service ?? "--"}</div>
-                    <div><span className="font-semibold">Message:</span> {c.message ?? "--"}</div>
+                  <div key={c.id} className="border-b pb-2 flex justify-between items-center gap-4">
+                    <div>
+                      <div><span className="font-semibold">Name:</span> {c.name}</div>
+                      <div><span className="font-semibold">Email:</span> {c.email}</div>
+                      <div><span className="font-semibold">Company:</span> {c.company ?? "--"}</div>
+                      <div><span className="font-semibold">Contact Number:</span> {c.contact_number ?? "--"}</div>
+                      <div><span className="font-semibold">Service:</span> {c.service ?? "--"}</div>
+                      <div><span className="font-semibold">Message:</span> {c.message ?? "--"}</div>
+                    </div>
+                    <AlertDialog open={deleteDialogOpen === c.id} onOpenChange={(open) => setDeleteDialogOpen(open ? c.id : null)}>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="destructive" size="sm" className="ml-4">
+                          Delete
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>Delete Lead?</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            Are you sure you want to delete this lead? This cannot be undone.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction
+                            onClick={() => {
+                              handleDeleteLead(c.id);
+                              setDeleteDialogOpen(null);
+                            }}
+                          >
+                            Yes, Delete
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </div>
                 ))}
               </div>
