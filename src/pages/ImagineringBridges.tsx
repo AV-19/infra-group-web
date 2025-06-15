@@ -62,7 +62,7 @@ const ImagineringBridges = () => {
             <div className="flex items-center justify-center">
               <img
                   src="https://atslab.com/wp-content/uploads/2018/12/Weld_Testing_Structural-1536x1152.jpg.webp"
-                  alt="Bridge construction diagram"
+                  alt="Bridge construction"
                 />
             </div>
           </div>
