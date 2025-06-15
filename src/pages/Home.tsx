@@ -18,7 +18,8 @@ const Home = () => {
       keyService: "Launching girder design",
       icon: "🖥",
       link: "/rkc-infratech",
-      accentColor: "#4169e1" // Royal blue
+      accentColor: "#4169e1", // Royal blue
+      projectImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Engineering design
     },
     {
       title: "IMAGINEERING BRIDGES",
@@ -26,7 +27,8 @@ const Home = () => {
       keyService: "Segment mold supply",
       icon: "🏭",
       link: "/imagineering-bridges",
-      accentColor: "#4169e1" // Royal blue
+      accentColor: "#4169e1", // Royal blue
+      projectImage: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Fabrication/industrial
     },
     {
       title: "RIYARE CONSTRUCT",
@@ -34,7 +36,8 @@ const Home = () => {
       keyService: "U-girder installation",
       icon: "🌉",
       link: "/riyare-micro-construct",
-      accentColor: "#4169e1" // Royal blue
+      accentColor: "#4169e1", // Royal blue
+      projectImage: "https://images.unsplash.com/photo-1439337153520-7082a56a81f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Bridge
     },
     {
       title: "CHOUBEY OFFICE",
@@ -42,7 +45,8 @@ const Home = () => {
       keyService: "Angel funding",
       icon: "💰",
       link: "/rkchoubey-family-office",
-      accentColor: "#4169e1" // Royal blue
+      accentColor: "#4169e1", // Royal blue
+      projectImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Finance/money
     }
   ];
 
@@ -87,6 +91,7 @@ const Home = () => {
                 icon={firm.icon}
                 link={firm.link}
                 accentColor={firm.accentColor}
+                projectImage={firm.projectImage}
               />
             ))}
           </div>
@@ -112,3 +117,4 @@ const Home = () => {
 };
 
 export default Home;
+
