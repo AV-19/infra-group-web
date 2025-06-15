@@ -59,7 +59,7 @@ const CTAFooterSection = () => {
             <div key={form.id} className="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
               <div className="text-center mb-4">
                 <div className="text-3xl mb-2">{form.icon}</div>
-                <h3 className="text-lg font-semibold mb-3">{form.title}</h3>
+                <h3 className="text-m font-semibold mb-3">{form.title}</h3>
               </div>
 
               {/* WhatsApp Get Started button */}
