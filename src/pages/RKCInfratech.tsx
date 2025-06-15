@@ -62,7 +62,8 @@ const RKCInfratech = () => {
               </p>
             </div>
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-8 h-80 flex items-center justify-center">
-              <div className="text-primary text-8xl">🏗️</div>
+              {/*   <div className="text-primary text-8xl">🏗️</div> */}
+              <div> <img src="https://dotrid.com/files/uploads/2019/05/BRIDGE-DESIGN-CONSTRUCTION-AND-MAINTENANCE.jpg" alt=""> </div>
             </div>
           </div>
         </div>
