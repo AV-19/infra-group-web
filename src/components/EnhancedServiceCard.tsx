@@ -87,7 +87,7 @@ const EnhancedServiceCard = ({
             className="inline-block w-full text-center py-2 px-4 rounded-lg text-white font-medium transition-colors"
             style={{ backgroundColor: accentColor }}
           >
-            View Case Study
+            Visit Us
           </Link>
         </div>
       </div>
