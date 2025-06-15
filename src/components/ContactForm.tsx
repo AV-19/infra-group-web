@@ -1,9 +1,11 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { supabase } from "@/integrations/supabase/client";
 
 const services = [
   "RKC Infratech - Design Consultancy",
@@ -21,6 +23,7 @@ const ContactForm = () => {
     service: "",
     message: ""
   });
+  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (
@@ -33,8 +36,30 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
+    // Insert form data into Supabase contact_submissions table
+    const { error } = await supabase.from("contact_submissions").insert([
+      {
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || null,
+        service: formData.service || null,
+        message: formData.message
+      }
+    ]);
+    setLoading(false);
+
+    if (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive"
+      });
+      return;
+    }
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We'll get back to you soon.",
@@ -146,8 +171,9 @@ const ContactForm = () => {
                 type="submit"
                 size="lg"
                 className="w-full hover:scale-[1.04] active:scale-100 transition-transform duration-150 bg-primary hover:bg-primary/90"
+                disabled={loading}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </CardContent>
