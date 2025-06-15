@@ -59,8 +59,11 @@ const ImagineringBridges = () => {
                 With our state-of-the-art facility and experienced team, we deliver precision-engineered products that form the backbone of India's bridge infrastructure development.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-8 h-80 flex items-center justify-center">
-              <div className="text-primary text-8xl">🏭</div>
+            <div className="flex items-center justify-center">
+              <img
+                  src="https://atslab.com/wp-content/uploads/2018/12/Weld_Testing_Structural-1536x1152.jpg.webp"
+                  alt="Bridge construction diagram"
+                />
             </div>
           </div>
         </div>
