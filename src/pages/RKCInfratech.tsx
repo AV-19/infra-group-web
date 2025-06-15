@@ -60,7 +60,7 @@ const RKCInfratech = () => {
                 We specialize in creating detailed engineering solutions that ensure project success while maintaining the highest safety standards throughout the construction process.
               </p>
             </div>
-            <div className=" p-8 h-80 flex items-center justify-center">
+            <div className=" flex items-center justify-center">
               {/*   <div className="text-primary text-8xl">🏗️</div> */}
              
                 <img
