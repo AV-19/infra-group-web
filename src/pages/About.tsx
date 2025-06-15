@@ -1,3 +1,4 @@
+
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState } from "react";
@@ -7,49 +8,49 @@ const About = () => {
   const leadership = [
     {
       name: "R.K. Choubey",
-      position: "Founder, Design - Head Enabling/Temporary Structures Specialist",
-      bio: "M. Tech from Dr APJ Abdul Kalam Technical university Lucknow (formerly known as UPTU) and Post Graduate in Project Management from NICMAR. He has 14+ Year experience in Temporary structure design and has worked with reputed organisation in the field of bridge engineering. Have designed various LG, Lifting Frame, Ground Support System, Precast Mould, Pre-tensioning Yard and various type of shuttering. With a passion for structural design, Mr. Choubey brings innovative solutions to bridge consultancy. A keen eye for detail ensures that every project meets industry standards and client expectations. Their experience spans various types of infrastructures, allowing for a versatile approach to problem-solving. Committed to continuous learning, they stay updated on the latest trends and technologies in the field. This dedication translates into exceptional service and client satisfaction, making them a valuable asset in every project.",
-      image: "👨‍💼"
+      position: "Founder & Head (Enabling/Temporary Structures Specialist)",
+      bio: "M. Tech from Dr APJ Abdul Kalam Technical University. Post Graduate in Project Management. 14+ years in temporary structure design. Designed various LGs, lifting frames, ground support systems, molds, pre-tensioning yards, and shuttering. Renowned for innovative and detail-oriented bridge design, client focus, and continuous learning in modern engineering.",
+      image: "/lovable-uploads/rkc-infratech.png"
     },
     {
       name: "Sai Bhavith EV",
       position: "Sr. Manager Design",
-      bio: "M.Tech in Structural Engineering from Vellore Institute of Technology, has 5+ year experience in temporary structure design and has worked with reputed design consultancy firm in India. An expert in temporary structures, this professional excels at creating efficient designs that meet project needs without compromising safety. Their hands-on experience allows them to foresee potential challenges and address them proactively. With a strong background in engineering principles, they ensure that every design is both functional and sustainable. Their collaborative approach fosters strong relationships with clients, ensuring that all requirements are understood and met. Always aiming for excellence, this individual is dedicated to delivering high-quality results on time and within budget. Expert in designing temporary structures with a focus on safety.",
-      image: "👥"
+      bio: "M.Tech in Structural Engineering from VIT. 5+ years in temporary structure design for leading firms. Expert in safety-driven, efficient temporary and precast designs. Collaborative, proactive in problem-solving, and dedicated to high-quality, sustainable structures.",
+      image: "/lovable-uploads/3d058085-125c-4835-ba9c-5b3b8492b5a5.png"
     },
     {
       name: "Dheeraj Kumar",
       position: "CAD Engineer",
-      bio: "Dedicated to enhancing the field of bridge consultancy, this professional combines technical expertise with innovative thinking. They have successfully worked on numerous high-profile projects, bringing a wealth of knowledge and experience. Their strategic approach to design ensures that each project is not only aesthetically pleasing but also structurally sound. An advocate for teamwork and collaboration, they work closely with clients to understand their vision and bring it to life. Their commitment to quality and efficiency sets them apart in the industry, making every project a success. Innovative CAD engineer for enabling Structure drawings with a strategic approach to drawing.",
-      image: "👥"
+      bio: "Innovative CAD expert for enabling structure drawings. Focused on aesthetic, strategic designs and close client collaboration. Delivers quality, efficiency, and success in high-profile projects.",
+      image: "/lovable-uploads/5558ae05-e6ec-41d2-9667-53db85f0ce8c.png"
     },
     {
       name: "Kiran Choubey",
-      position: "Human Resourcse -Administration",
-      bio: "She has a Bachelor’s Degree in Art from Veer Kumwar Singh University, Bihar. She holds end-to-end responsibility of Human Resource Management and Administration of the Company.",
-      image: "👥"
+      position: "HR & Administration",
+      bio: "BA, Veer Kumwar Singh University. Responsible for HR management and administration, ensuring strong support for the team and an excellent work environment.",
+      image: "/lovable-uploads/WhatsApp Image 2025-06-13 at 12.12.53_98f5d5fd.jpg"
     }
   ];
 
   const values = [
     {
       title: "Innovation",
-      description: "Pioneering advanced construction methodologies and embracing cutting-edge technology.",
+      description: "Pioneering advanced construction methodologies & embracing the latest technology.",
       icon: "💡"
     },
     {
       title: "Quality",
-      description: "Uncompromising commitment to excellence in every project we undertake.",
+      description: "Uncompromising commitment to excellence in every project.",
       icon: "⭐"
     },
     {
       title: "Safety",
-      description: "Prioritizing the highest safety standards in all our construction activities.",
+      description: "Prioritizing the strictest safety standards in all our work.",
       icon: "🛡️"
     },
     {
       title: "Sustainability",
-      description: "Building infrastructure that supports long-term environmental and economic sustainability.",
+      description: "Long-term environmental & economic responsibility in every step.",
       icon: "🌱"
     }
   ];
@@ -62,7 +63,6 @@ const About = () => {
     "Indian Railways Approved Vendor"
   ];
 
-  // State for expanded bios
   const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
 
   const handleReadMore = (index: number) => {
@@ -73,135 +73,179 @@ const About = () => {
     );
   };
 
+  // Used for truncating bios
   const truncate = (text: string, n: number) => {
     return text.length > n ? text.slice(0, n) + "..." : text;
   };
 
   return (
-    <div>
+    <div className="bg-white">
       <Hero
         title="About RKC Infratech Group"
         subtitle="Building India's Infrastructure Legacy Since 2008"
+        className="mb-0"
       />
 
+      {/* About Banner */}
+      <section className="py-8 bg-gradient-to-br from-blue-50/60 via-white to-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-3">
+            We Build Bridges—in Structures & in People.
+          </h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            RKC Infratech Group is one of India's most trusted names in infrastructure, delivering outstanding projects with four specialist firms. From visionary design to seamless execution, our legacy is built on innovation, technical skill, and a relentless pursuit of quality.
+          </p>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4">
+        <hr className="my-8 md:my-12 border-primary/20" />
+      </div>
+
       {/* Vision & Mission */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                To be India's leading infrastructure group, setting benchmarks in bridge construction, 
-                design innovation, and strategic investment in infrastructure technology.
+      <section className="py-8 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div className="bg-primary/5 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 mb-8 md:mb-0">
+              <h2 className="text-2xl font-bold text-primary mb-4">Our Vision</h2>
+              <p className="text-base text-gray-700 mb-4">
+                To be India's leading infrastructure group, setting the benchmarks in bridge construction, design innovation, and investing in infrastructure technologies that uplift our nation.
               </p>
-              <p className="text-lg text-gray-600">
-                We envision a future where our expertise contributes significantly to India's 
-                infrastructure development, creating lasting value for communities and the nation.
+              <p className="text-base text-gray-700">
+                We build for the future, empowering the communities of tomorrow.
               </p>
             </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                To deliver exceptional infrastructure solutions through our four specialized firms, 
-                each excelling in their respective domains while maintaining the highest standards 
-                of quality, safety, and innovation.
+            <div className="bg-primary/5 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <h2 className="text-2xl font-bold text-primary mb-4">Our Mission</h2>
+              <p className="text-base text-gray-700 mb-4">
+                To deliver outstanding solutions through our specialized firms, maintaining gold standards in quality, safety, and innovation—with a mission to foster young talent, advance technology, and create sustainable value for all.
               </p>
-              <p className="text-lg text-gray-600">
-                We are committed to fostering technological advancement, supporting emerging talent, 
-                and contributing to India's infrastructure growth through strategic investments and partnerships.
-              </p>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2 text-base">
+                <li>Excellence in every project</li>
+                <li>Empowering the next generation of engineers</li>
+                <li>Ethical, sustainable business practices</li>
+                <li>Driving India's infrastructure growth</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4">
+        <hr className="my-8 md:my-12 border-primary/20" />
+      </div>
+
       {/* Leadership */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Leadership Team</h2>
-            <p className="text-xl text-gray-600">
-              Experienced leaders driving innovation and excellence
+      <section className="py-8 md:py-16 bg-gradient-to-br from-white via-blue-50/40 to-blue-100/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Leadership Team</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Meet the minds shaping infrastructure excellence.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex gap-6 overflow-x-auto pb-3 md:grid md:grid-cols-4 md:gap-8 md:overflow-visible">
             {leadership.map((leader, index) => {
               const isExpanded = expandedIndexes.includes(index);
-              const shouldTruncate = leader.bio.length > 120;
+              const shouldTruncate = leader.bio.length > 110;
               return (
-                <Card key={index} className="text-center">
-                  <CardHeader>
-                    <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-4xl">{leader.image}</span>
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-80 md:w-auto bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl mb-4 md:mb-0 flex flex-col items-center"
+                >
+                  <div className="w-full flex flex-col items-center p-4">
+                    <div className="w-24 h-24 overflow-hidden rounded-full border-4 border-primary shadow mb-2 flex items-center justify-center bg-white">
+                      <img
+                        src={leader.image}
+                        alt={leader.name}
+                        className="object-cover w-full h-full"
+                      />
                     </div>
-                    <CardTitle className="text-xl">{leader.name}</CardTitle>
-                    <p className="text-primary font-medium">{leader.position}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-2">
+                    <CardTitle className="text-lg font-bold text-primary mb-1 mt-2 text-center">
+                      {leader.name}
+                    </CardTitle>
+                    <p className="text-xs uppercase tracking-wide text-gray-500 mb-2 text-center">
+                      {leader.position}
+                    </p>
+                  </div>
+                  <CardContent className="p-4 pt-0 text-gray-700 text-sm">
+                    <p>
                       {isExpanded || !shouldTruncate
                         ? leader.bio
-                        : truncate(leader.bio, 120)}
+                        : truncate(leader.bio, 110)}
                     </p>
                     {shouldTruncate && (
                       <Button
                         variant="link"
-                        className="text-primary p-0 h-auto text-sm"
+                        className="text-primary p-0 h-auto text-xs mt-1"
                         onClick={() => handleReadMore(index)}
                       >
                         {isExpanded ? "Read less" : "Read more"}
                       </Button>
                     )}
                   </CardContent>
-                </Card>
+                </div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
-            <p className="text-xl text-gray-600">
-              The principles that guide everything we do
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4">
+        <hr className="my-8 md:my-12 border-primary/20" />
+      </div>
+
+      {/* Our Values */}
+      <section className="py-8 md:py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Our Values</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              The principles that inspire every bridge we build.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">{value.icon}</span>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {values.map((value, i) => (
+              <div
+                key={i}
+                className="bg-primary/5 rounded-xl shadow-sm p-6 flex flex-col items-center transition-all hover:scale-105 hover:bg-primary/10"
+              >
+                <div className="text-4xl mb-3">{value.icon}</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">{value.title}</h3>
+                <p className="text-gray-700 text-sm text-center">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4">
+        <hr className="my-8 md:my-12 border-primary/20" />
+      </div>
+
       {/* Certifications */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Certifications & Approvals</h2>
-            <p className="text-xl text-gray-600">
-              Recognized excellence and compliance standards
+      <section className="py-8 md:py-16 bg-gradient-to-br from-blue-50/70 to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Certifications & Approvals</h2>
+            <p className="text-lg text-gray-700 max-w-xl mx-auto">
+              Recognized for excellence, safety, and compliance.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-xl">📜</span>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {certifications.map((cert, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-all"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 text-2xl text-primary">
+                  📜
                 </div>
-                <h3 className="font-semibold text-gray-900">{cert}</h3>
+                <h3 className="font-semibold text-gray-900 text-center">{cert}</h3>
               </div>
             ))}
           </div>
@@ -212,3 +256,4 @@ const About = () => {
 };
 
 export default About;
+
