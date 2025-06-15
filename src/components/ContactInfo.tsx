@@ -28,22 +28,33 @@ const info = [
 ];
 
 const ContactInfo = () => (
-  <Card className="mb-6 animate-fade-in shadow-xl">
+  <Card className="mb-4 animate-fade-in shadow-xl border-0 bg-gradient-to-br from-white via-slate-50 to-blue-100 hover:shadow-2xl transition-shadow duration-300">
     <CardHeader>
-      <CardTitle className="text-2xl text-primary mb-2">Get in Touch</CardTitle>
+      <CardTitle className="text-2xl text-primary mb-2 font-playfair flex items-center gap-2 animate-fade-in">
+        <span>Get in Touch</span>
+        <span className="inline-block w-2 h-2 rounded-full bg-primary/60 animate-pulse"></span>
+      </CardTitle>
       <p className="text-muted-foreground text-sm">
         We're here to support your infrastructure project at every stage.
       </p>
     </CardHeader>
     <CardContent>
-      <div className="space-y-4">
+      <div className="space-y-5">
         {info.map((item, i) => (
-          <div className="flex items-start gap-3" key={i}>
+          <div
+            className="flex items-start gap-3 group hover:scale-[1.04] transition-transform duration-200"
+            key={i}
+          >
             <div className="pt-1">{item.icon}</div>
             <div>
-              <div className="font-medium text-gray-800">{item.label}</div>
+              <div className="font-medium text-gray-800 group-hover:text-primary transition-colors duration-200">{item.label}</div>
               {item.link ? (
-                <a href={item.link} className="text-primary underline text-sm">{item.content}</a>
+                <a
+                  href={item.link}
+                  className="text-primary underline text-sm hover:text-primary/80 transition-colors"
+                >
+                  {item.content}
+                </a>
               ) : (
                 <div className="text-gray-600 text-sm">{item.content}</div>
               )}

@@ -37,27 +37,38 @@ const colorVariants = [
 ];
 
 const CompanyDirectory = () => (
-  <section className="mt-16 animate-fade-in">
-    <h2 className="text-3xl font-bold text-center text-primary mb-8">
-      Contact Our Specialized Firms Directly
+  <section className="mt-8 animate-fade-in">
+    <h2 className="text-3xl font-bold text-center text-primary mb-10 font-playfair tracking-tight animate-fade-in">
+      Our Network of Specialized Firms
     </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
       {companies.map((company, i) => (
         <Card
           key={company.name}
-          className={`rounded-xl shadow-md p-6 flex flex-col items-center text-center bg-gradient-to-br ${colorVariants[i % colorVariants.length]} hover:shadow-xl transition-shadow`}
+          className={`
+            rounded-xl shadow-md p-7 flex flex-col items-center text-center
+            bg-gradient-to-br ${colorVariants[i % colorVariants.length]}
+            hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-out
+            group animate-fade-in
+          `}
         >
-          <h3 className="font-semibold text-gray-900 mb-1 text-lg">{company.name}</h3>
+          <h3 className="font-semibold text-gray-900 mb-1 text-lg group-hover:text-primary transition-colors duration-200">{company.name}</h3>
+          <div className="w-10 h-1 bg-primary/20 rounded mx-auto mb-1"></div>
           <p className="text-sm text-gray-600 mb-2">{company.specialization}</p>
           <div className="flex flex-col items-center gap-1 text-primary">
             <div className="flex items-center gap-1">
               <Mail size={16} className="mr-1" />
-              <a href={`mailto:${company.contact}`} className="underline">{company.contact}</a>
+              <a href={`mailto:${company.contact}`} className="underline hover:text-primary/80 transition-colors">{company.contact}</a>
             </div>
             {company.mobile && (
               <div className="flex items-center gap-1">
                 <Phone size={16} className="mr-1" />
-                <a href={`tel:${company.mobile.replace(/\s/g, "")}`} className="underline">{company.mobile}</a>
+                <a
+                  href={`tel:${company.mobile.replace(/\s/g, "")}`}
+                  className="underline hover:text-primary/80 transition-colors"
+                >
+                  {company.mobile}
+                </a>
               </div>
             )}
           </div>
