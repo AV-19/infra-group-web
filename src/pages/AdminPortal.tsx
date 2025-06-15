@@ -11,6 +11,7 @@ type ContactSubmission = {
   name: string;
   email: string;
   company: string | null;
+  contact_number?: string | null;
   service: string | null;
   message: string | null;
   created_at?: string | null;
