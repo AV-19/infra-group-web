@@ -41,16 +41,17 @@ const CompanyDirectory = () => (
     <h2 className="text-3xl font-bold text-center text-primary mb-10 font-playfair tracking-tight animate-fade-in">
       Our Network of Specialized Firms
     </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {companies.map((company, i) => (
         <Card
           key={company.name}
           className={`
             rounded-xl shadow-md p-7 flex flex-col items-center text-center
             bg-gradient-to-br ${colorVariants[i % colorVariants.length]}
-            hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-out
+            hover:scale-105 hover:shadow-2xl hover:bg-white ring-1 ring-transparent hover:ring-primary/40 transition-all duration-300
             group animate-fade-in
           `}
+          style={{ animationDelay: `${i * 80}ms` }}
         >
           <h3 className="font-semibold text-gray-900 mb-1 text-lg group-hover:text-primary transition-colors duration-200">{company.name}</h3>
           <div className="w-10 h-1 bg-primary/20 rounded mx-auto mb-1"></div>
@@ -77,5 +78,4 @@ const CompanyDirectory = () => (
     </div>
   </section>
 );
-
 export default CompanyDirectory;

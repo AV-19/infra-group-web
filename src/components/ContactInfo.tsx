@@ -28,7 +28,7 @@ const info = [
 ];
 
 const ContactInfo = () => (
-  <Card className="mb-4 animate-fade-in shadow-xl border-0 bg-gradient-to-br from-white via-slate-50 to-blue-100 hover:shadow-2xl transition-shadow duration-300">
+  <Card className="mb-4 animate-fade-in shadow-xl border bg-gradient-to-br from-white via-slate-50 to-blue-100 hover:shadow-2xl transition-shadow duration-300 focus-within:ring-2 focus-within:ring-primary/60">
     <CardHeader>
       <CardTitle className="text-2xl text-primary mb-2 font-playfair flex items-center gap-2 animate-fade-in">
         <span>Get in Touch</span>
@@ -42,16 +42,17 @@ const ContactInfo = () => (
       <div className="space-y-5">
         {info.map((item, i) => (
           <div
-            className="flex items-start gap-3 group hover:scale-[1.04] transition-transform duration-200"
+            className="flex items-start gap-3 group rounded-lg hover:bg-primary/5 transition-all duration-200 cursor-pointer focus-within:ring-1 focus-within:ring-primary"
             key={i}
+            tabIndex={0}
           >
-            <div className="pt-1">{item.icon}</div>
+            <div className="pt-1 group-hover:-translate-y-1 transition-transform duration-200">{item.icon}</div>
             <div>
               <div className="font-medium text-gray-800 group-hover:text-primary transition-colors duration-200">{item.label}</div>
               {item.link ? (
                 <a
                   href={item.link}
-                  className="text-primary underline text-sm hover:text-primary/80 transition-colors"
+                  className="text-primary underline text-sm hover:text-primary/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
                 >
                   {item.content}
                 </a>
@@ -65,5 +66,4 @@ const ContactInfo = () => (
     </CardContent>
   </Card>
 );
-
 export default ContactInfo;

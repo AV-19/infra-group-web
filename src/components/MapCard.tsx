@@ -1,6 +1,6 @@
 
 const MapCard = () => (
-  <div className="bg-white rounded-lg shadow-xl p-0 mb-6 overflow-hidden animate-fade-in hover:scale-105 hover:shadow-2xl transition-all duration-300">
+  <div className="bg-white rounded-lg shadow-xl p-0 mb-6 overflow-hidden animate-fade-in hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-primary transition-all duration-300 border border-primary/10">
     <h3 className="text-xl font-bold px-8 pt-6 mb-2 text-primary font-playfair">Our Location</h3>
     <div className="rounded-lg overflow-hidden shadow-md mx-8">
       <iframe
@@ -19,5 +19,4 @@ const MapCard = () => (
     </div>
   </div>
 );
-
 export default MapCard;

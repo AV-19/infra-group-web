@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -119,7 +118,8 @@ const ContactForm = () => {
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:shadow transition-shadow"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:shadow hover:border-primary/40 transition-shadow bg-white/95 z-20"
+                  style={{ minHeight: "44px" }}
                 >
                   <option value="">Select a service</option>
                   {services.map((service, index) => (
@@ -145,7 +145,7 @@ const ContactForm = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full hover:scale-[1.03] active:scale-100 transition-transform duration-150"
+                className="w-full hover:scale-[1.04] active:scale-100 transition-transform duration-150 bg-primary hover:bg-primary/90"
               >
                 Send Message
               </Button>
