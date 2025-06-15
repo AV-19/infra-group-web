@@ -64,8 +64,11 @@ const RiyareMicroConstruct = () => {
                 We combine precision engineering with innovative construction techniques to deliver bridges that stand the test of time while meeting the demanding schedules of modern infrastructure projects.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-8 h-80 flex items-center justify-center">
-              <div className="text-primary text-8xl">🌉</div>
+            <div className="flex items-center justify-center">
+              <img
+                  src="https://blog.enerpac.com/wp-content/uploads/2024/08/cast-in-place-vs-precast-concrete-1.png"
+                  alt="Bridge Construction"
+                />
             </div>
           </div>
         </div>
