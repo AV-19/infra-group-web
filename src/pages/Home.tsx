@@ -28,7 +28,7 @@ const Home = () => {
       icon: "🏭",
       link: "/imagineering-bridges",
       accentColor: "#4169e1", // Royal blue
-      projectImage: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Fabrication/industrial
+      projectImage: "https://www.weldwins.com/static/f86858ecc505a2a99754792481b13e0c/8dbcc/cover.jpg " // Fabrication/industrial
     },
     {
       title: "RIYARE CONSTRUCT",
@@ -37,7 +37,7 @@ const Home = () => {
       icon: "🌉",
       link: "/riyare-micro-construct",
       accentColor: "#4169e1", // Royal blue
-      projectImage: "https://images.unsplash.com/photo-1439337153520-7082a56a81f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Bridge
+      projectImage: "https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs40799-022-00616-y/MediaObjects/40799_2022_616_Fig6_HTML.png " // Bridge
     },
     {
       title: "CHOUBEY OFFICE",
