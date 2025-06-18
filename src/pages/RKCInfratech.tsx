@@ -134,7 +134,7 @@ const RKCInfratech = () => {
               Showcasing our expertise in temporary structure design
             </p>
           </div>
-          
+          {/*
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3].map((item) => (
               <div key={item} className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -149,6 +149,7 @@ const RKCInfratech = () => {
             ))}
           </div>
         </div>
+        */}
       </section>
 
       {/* CTA Section */}
